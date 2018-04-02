@@ -19,32 +19,36 @@
 
     <div>
       <p>Did you like this route? Then rate us!</p>
-      <ratings></ratings>
+      <star-rating
+        @rating-selected ="setRating"
+        v-model="rating"
+        v-bind:show-rating="false">
+      </star-rating>
     </div>
-
-
   </div>
 </template>
 
 <script>
-  import Ratings from '../components/RatingsComponent'
+  import StarRating from 'vue-star-rating'
 
   export default {
     name: 'SummaryOfRoute',
     components: {
-      Ratings
+      StarRating
     },
     data() {
       return {
         name: 'Culture & Architecture',
         distance: 250,//meters
         time: 208, //minutes
-        rating: 3 //how many stars colored
+        rating: 1 //how many stars colored
       }
     },
-
     methods: {
-
+      setRating: function(rating){
+        this.rating= rating;
+        console.log("we have rerated too " + rating)
+      }
     },
     computed:{
       showDistanceFromMeterToKilometer: function () {
@@ -62,23 +66,15 @@
 
 <style lang="scss" scoped>
   @import "../assets/sass/main.scss";
-
-  div {
+  .summary-route{
     margin: 0;
     width: 100vw;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
 
     background-color: $green;
     color: $text_white;
     font-family: $coolvetica_1;
     font-size: 1.5em;
-
-    .page-title{
-
-    }
   }
 
 </style>
