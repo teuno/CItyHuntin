@@ -1,0 +1,31 @@
+@import '~bulma/bulma';
+
+
+//text colors
+$text_white : #FFFFFF;
+$text_deep_gray : #20201F;
+$text_green : #3AAA35;
+
+//background colors
+$mint_green : #42E25E;
+$green : #3AAA35;
+$blue : #1A7D9C;
+$navy_blue : #3420A4;
+
+
+//font types
+@font-face {
+  font-family: 'Coolvetica';
+  src: url(https://fonts.googleapis.com/css?family=Cookie);
+  //src: url('../fonts/coolvetica/Coolvetica.ttf')format('truetype'); //saidly doesnt work
+}
+
+
+//
+$coolvetica_1 : Coolvetica;
+//$coolvetica_2 : "";
+//$roboto_black :  "";
+//$roboto_white : "";
+
+
+
