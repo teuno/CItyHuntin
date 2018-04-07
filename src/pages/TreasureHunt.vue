@@ -7,6 +7,7 @@
         <figure @click="printDing(route.name)">
           <div class="container">
             <img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Norway" width="1000" height="300">
+            <!--<img :src="route.image">-->
             <div class="center">{{route.name}}</div>
           </div>
         </figure>
@@ -37,7 +38,7 @@
     data() {
       return {
         routes: [
-          {image: "", name: 'level 1'},
+          {image: "./assets/images/hunt_1.jpg", name: 'level 1'},
           {image: "", name: 'level 2'},
           {image: "", name: 'level 3'},
           {image: "", name: 'level 4'},

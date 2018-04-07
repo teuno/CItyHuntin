@@ -6,6 +6,7 @@ import TreasureHunt from '@/pages/TreasureHunt'
 import Achievements from '@/pages/Achievements'
 import Settings from '@/pages/Settings'
 import SummaryOfRoute from '@/pages/SummaryOfRoute'
+import MoreRouteInfo from '@/pages/MoreRouteInfo'
 
 
 // require('./assets/sass/main.scss');
@@ -25,7 +26,8 @@ const routes = [
   {name: 'normalroute', path:'/normalroute', component: NormalRoute},
   {name: 'achievements', path:'/achievements', component: Achievements},
   {name: 'settings', path:'/settings', component: Settings},
-  {name: 'summaryofroute', path:'/summaryofroute', component: SummaryOfRoute},
+  { name: 'summaryofroute', path: '/summaryofroute', component: SummaryOfRoute },
+  { name: 'morerouteinfo', path: '/morerouteinfo', component: MoreRouteInfo },
 ];
 
 const router = new VueRouter({
