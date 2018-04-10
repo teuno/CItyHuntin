@@ -6,6 +6,7 @@
       <slide v-for="(route, i) in routes" :index="i">
         <figure @click="printDing(route.name)">
           <div class="container">
+
             <img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Norway" width="1000" height="300">
             <!--<img :src="route.image">-->
             <div class="center">{{route.name}}</div>
@@ -18,7 +19,7 @@
       <a v-on:click="left" class="button">
         <i class="fa fa-caret-left"></i>
       </a>
-      <button v-on:click="ding" class="button is-rounded">Choose city</button>
+      <button v-on:click="goToTreasureHuntSummary" class="button is-rounded">Choose treasure hunt</button>
       <a v-on:click="right" class="button">
         <i class="fa fa-caret-right"></i>
       </a>
@@ -49,8 +50,9 @@
       }
     },
     methods: {
-      ding: function () {
-        console.log(this.$refs.carousel.currentIndex);
+      goToTreasureHuntSummary: function () {
+        this.$router.push({name: 'moretreasurehuntinfo'})
+//        console.log(this.$refs.carousel.currentIndex);
       },
       printDing: function (name) {
         console.log(name);
@@ -67,7 +69,7 @@
 
 
 <style lang="scss" scoped>
-  @import "../assets/sass/main.scss";
+  @import "../../assets/sass/main";
 
   .treasureHunt {
     min-height: 100vh;

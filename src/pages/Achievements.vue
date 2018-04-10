@@ -10,6 +10,7 @@
 
 <script>
   import Achievement from '../components/Achievement'
+  import data from '../assets/json/achievementdata'
 
   export default {
     name: 'Achievements',
@@ -18,19 +19,7 @@
     },
     data() {
       return {
-        achievements: [
-          {image: "", title: "title 1", description: "description 1", fullfilled: false, progress: 25},
-          {image: "", title: "title 2", description: "description 2", fullfilled: false, progress: 55},
-          {image: "", title: "title 3", description: "description 3", fullfilled: false, progress: 25},
-          {image: "", title: "title 4", description: "description 4", fullfilled: false, progress: 55},
-          {image: "", title: "title 5", description: "description 5", fullfilled: false, progress: 25},
-          {image: "", title: "title 6", description: "description 6", fullfilled: false, progress: 55},
-          {image: "", title: "title 7", description: "description 7", fullfilled: false, progress: 25},
-          {image: "", title: "title 8", description: "description 8", fullfilled: false, progress: 55},
-          {image: "", title: "title 9", description: "description 9", fullfilled: false, progress: 25},
-          {image: "", title: "title 10", description: "description 10", fullfilled: false, progress: 55},
-          {image: "", title: "title 11", description: "description 11", fullfilled: false, progress: 25}
-        ]
+        achievements: data
       }
     },
     methods: {}

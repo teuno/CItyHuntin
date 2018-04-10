@@ -1,6 +1,6 @@
 <template>
     <div class="achievement">
-      <div v-if="fullfilled">
+      <div v-if="progress < 100">
         <i class="fas fa-lock-open"></i>
       </div>
 
@@ -34,7 +34,7 @@
       },
       progress:{
         type: Number,
-        default:''
+        default:0
       }
     },
     methods: {

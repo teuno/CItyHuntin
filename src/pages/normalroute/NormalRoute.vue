@@ -16,7 +16,7 @@
       <a v-on:click="left" class="button">
         <i class="fa fa-caret-left"></i>
       </a>
-      <button class="button is-rounded">Choose city</button>
+      <button v-on:click="goToRouteSummary" class="button is-rounded">Choose route</button>
       <a v-on:click="right" class="button">
         <i class="fa fa-caret-right"></i>
       </a>
@@ -58,6 +58,9 @@
       },
       right: function () {
         this.$refs.carousel.goNext();
+      },
+      goToRouteSummary: function () {
+        this.$router.push({name: 'morerouteinfo'})
       }
     }
   }
@@ -65,7 +68,7 @@
 
 
 <style lang="scss" scoped>
-  @import "../assets/sass/main.scss";
+  @import "../../assets/sass/main";
 
   .normalRoute {
     min-height: 100vh;

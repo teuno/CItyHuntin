@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import MainMenu from '@/pages/MainMenu'
-import NormalRoute from '@/pages/NormalRoute'
-import TreasureHunt from '@/pages/TreasureHunt'
+import NormalRoute from '@/pages/normalroute/NormalRoute'
+import MoreRouteInfo from '@/pages/normalroute/MoreRouteInfo'
+import SummaryOfRoute from '@/pages/normalroute/SummaryOfRoute'
+import NormalRouteMap from '@/pages/normalroute/NormalRouteMap'
+import TreasureHunt from '@/pages/treasurehunt/TreasureHunt'
+import MoreTreasureHuntInfo from '@/pages/treasurehunt/MoreTreasureHuntInfo'
 import Achievements from '@/pages/Achievements'
 import Settings from '@/pages/Settings'
-import SummaryOfRoute from '@/pages/SummaryOfRoute'
-import MoreRouteInfo from '@/pages/MoreRouteInfo'
 
 
 // require('./assets/sass/main.scss');
@@ -28,6 +30,9 @@ const routes = [
   {name: 'settings', path:'/settings', component: Settings},
   { name: 'summaryofroute', path: '/summaryofroute', component: SummaryOfRoute },
   { name: 'morerouteinfo', path: '/morerouteinfo', component: MoreRouteInfo },
+  { name: 'moretreasurehuntinfo', path: '/moretreasurehuntinfo', component: MoreTreasureHuntInfo },
+  { name: 'normalroutemap', path: '/normalroutemap', component: NormalRouteMap },
+
 ];
 
 const router = new VueRouter({

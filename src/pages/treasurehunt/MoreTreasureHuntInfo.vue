@@ -8,19 +8,19 @@
 
     <label>{{route.description}}</label>
 
-    <button class="button is-rounded">Start route</button>
+    <button class="button is-rounded">Start treasure hunt</button>
 
   </div>
 </template>
 <script>
   export default {
-    name: 'MoreRouteInfo',
+    name: 'MoreTreasureHuntInfo',
     components: {
 
     },
     data() {
       return {
-        route: { image: "", name: 'Route 1', description: 'description of the route' }
+        route: { image: "", name: 'treasure hunt 1', description: 'description of the treasure hunt' }
       }
     },
     methods: {
@@ -29,7 +29,7 @@
 
 <style lang="scss" scoped>
 
-  @import "../assets/sass/main.scss";
+  @import "../../assets/sass/main";
 
   .MoreRouteInfo {
     min-height: 100vh;

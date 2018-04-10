@@ -65,7 +65,7 @@
 
 
 <style lang="scss" scoped>
-  @import "../assets/sass/main.scss";
+  @import "../../assets/sass/main";
   .summary-route{
     margin: 0;
     width: 100vw;
@@ -76,5 +76,4 @@
     font-family: $coolvetica_1;
     font-size: 1.5em;
   }
-
 </style>

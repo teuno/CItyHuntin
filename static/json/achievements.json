@@ -1,0 +1,72 @@
+[
+  {
+    image: "",
+    title: "City Hopper",
+    description: "You walked a route in more than 5 city's ",
+    fullfilled: boolean,
+    progress: 55
+  },
+  {
+    image: "",
+    title: "N00b",
+    description: "Yay congrataz you walked your first route",
+    fullfilled: boolean,
+    progress: 100
+  },
+  {
+    image: "",
+    title: "Country Roads",
+    description: "You walked a route in more than 3 different country's",
+    fullfilled: boolean,
+    progress: 33
+  },
+  {
+    image: "",
+    title: "Day walker",
+    description: "You walked the longest route currently available in the app",
+    fullfilled: boolean,
+    progress: 0
+  },
+  {
+    image: "",
+    title: "POI Ya yippi yippi ye",
+    description: "You visited over 10 different POI's",
+    fullfilled: boolean,
+    progress: 0
+  },
+  {
+    image: "",
+    title: "Hunter",
+    description: "Good job, you completed your first treasure hunt",
+    fullfilled: boolean,
+    progress: 100
+  },
+  {
+    image: "",
+    title: "Hunter II",
+    description: "You completed 5! treasure hunts",
+    fullfilled: boolean,
+    progress: 20
+  },
+  {
+    image: "",
+    title: "Hunter III",
+    description: "You completed 10! treasure hunts",
+    fullfilled: boolean,
+    progress: 10
+  },
+  {
+    image: "",
+    title: "Hunter IV",
+    description: "You completed 20! treasure hunts",
+    fullfilled: boolean,
+    progress: 5
+  },
+  {
+    image: "",
+    title: "Hunts master",
+    description: "You reached your master level: you completed 100!!! treasure hunts",
+    fullfilled: boolean,
+    progress: 1
+  }
+]

@@ -65,7 +65,8 @@
     align-self: center;
 
     color: $text_white;
-    font-family: $coolvetica_1;
+    font-family: 'Francois One', sans-serif;
+
     font-size: 1.5em;
 
     .height-25 {
