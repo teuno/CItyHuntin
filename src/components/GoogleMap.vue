@@ -3,37 +3,86 @@
 </template>
 
 <script>
+  import NormalMapStore from '../store/NormalMapStore'
+  import RouteMarkerPopup from '../components/RouteMarkerPopup'
+
   export default {
     name: 'google-map',
     props: ['name'],
+    components: {
+      RouteMarkerPopup
+    },
     data: function () {
       return {
         mapName: this.name + "-map",
         PointsOfInterest: [{
-          name: "point 1",
+          name: "House of Aleida Greve",
           description: "description 1",
           date_build: "",
           image_url: "",
-          latitude: 51.501527,
-          longitude: -0.1921837
+          latitude: 52.512942,
+          longitude: 6.089625
         }, {
-          name: "point 2",
+          name: "House of Potgieter",
           description: "description 2",
           date_build: "",
           image_url: "",
-          latitude: 51.505874,
-          longitude: -0.1838486
+          latitude: 52.511950,
+          longitude: 6.091056
         }, {
-          name: "point 3",
+          name: "House of Johannes Cele",
           description: "description 3",
           date_build: "",
           image_url: "",
-          latitude: 51.4998973,
-          longitude: -0.202432
-        }],
+          latitude: 52.511047,
+          longitude: 6.091728
+        }, {
+          name: "House of Emmanuel van Twenhuysen",
+          description: "description 3",
+          date_build: "",
+          image_url: "",
+          latitude: 52.510629,
+          longitude: 6.092635
+        }, {
+          name: "Hof van Suythem",
+          description: "description 3",
+          date_build: "",
+          image_url: "",
+          latitude: 52.510341,
+          longitude: 6.092704
+        }, {
+          name: "House of Rheinvis Feit",
+          description: "description 3",
+          date_build: "",
+          image_url: "",
+          latitude: 52.510138,
+          longitude: 6.093540
+        }, {
+          name: "House of Joan van der Capellen",
+          description: "description 3",
+          date_build: "",
+          image_url: "",
+          latitude: 52.511047,
+          longitude: 6.091728
+        }, {
+          name: "Hof van Ittersum",
+          description: "description 3",
+          date_build: "",
+          image_url: "",
+          latitude: 52.511308,
+          longitude: 6.094390
+        }, {
+          name: "House of admiral Jacob Pieter van Braam",
+          description: "description 3",
+          date_build: "",
+          image_url: "",
+          latitude: 52.512850,
+          longitude: 6.089429
+        }
+        ],
         map: null,
         bounds: null,
-        markers: []
+        markers: [],
       }
     },
     mounted: function () {
@@ -45,13 +94,33 @@
       const options = {
         center: new google.maps.LatLng(mapCentre.latitude, mapCentre.longitude)
       };
-
       this.map = new google.maps.Map(element, options);
+
 
       this.PointsOfInterest.forEach((PoI) => {
         const position = new google.maps.LatLng(PoI.latitude, PoI.longitude);
 
-        const popupWindow = `<div>The name is  ${PoI.name}<br> the description is ${PoI.description}</div>`
+        const popupWindow = `<div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">${PoI.name}</p>
+      </div>
+    </div>
+
+    <div class="content">
+      ${PoI.description}
+      <br>
+      <time datetime="2016-1-1">${PoI.date_build}</time>
+    </div>
+  </div>
+</div>`
+        // `<route-marker-popup :name=${PoI.name} :description=${PoI.description}></route-marker-popup>`;
 
         const infowindow = new google.maps.InfoWindow({
           content: popupWindow
@@ -59,23 +128,32 @@
 
         const marker = new google.maps.Marker({
           position,
-          map: this.map,
-          title: PoI.name
+          map: this.map
         });
 
-        marker.addListener('click', function() {
+
+        marker.addListener('click', function () {
           infowindow.open(this.map, marker);
+
+          console.log(this.lastOpenedWindow);
+          this.lastOpenedWindow = infowindow;
+          console.log(this.lastOpenedWindow);
         });
 
         this.markers.push(marker);
         this.map.fitBounds(this.bounds.extend(position))
       });
+    },
+    methods: {
+
     }
   };
 </script>
 
 
 <style lang="scss" scoped>
+  @import "../assets/sass/main";
+
   .google-map {
     width: 100vw;
     height: 100vh;

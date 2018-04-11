@@ -39,7 +39,7 @@
     data() {
       return {
         routes: [
-          {image: "./assets/images/hunt_1.jpg", name: 'level 1'},
+          {image: "", name: 'level 1'},
           {image: "", name: 'level 2'},
           {image: "", name: 'level 3'},
           {image: "", name: 'level 4'},
