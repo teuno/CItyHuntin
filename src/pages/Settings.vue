@@ -2,30 +2,28 @@
   <div class="settings">
     <h1>settings</h1>
 
-
     <div class="settings-menu">
       <a class="button is-large">
-    <span class="icon is-medium">
-      <i class="fas fa-user"></i>
-    </span>
+  <span class="icon is-medium">
+  <i class="fas fa-user"></i>
+  </span>
         <span>Profile</span>
       </a>
 
       <a class="button is-large">
-    <span class="icon is-medium">
-      <i class="fas fa-volume-up"></i>
-    </span>
+  <span class="icon is-medium">
+  <i class="fas fa-volume-up"></i>
+  </span>
         <span>Language</span>
       </a>
 
       <a class="button is-large">
-    <span class="icon is-medium">
-      <i class="fas fa-search"></i>
-    </span>
+  <span class="icon is-medium">
+  <i class="fas fa-search"></i>
+  </span>
         <span>Terms and conditions</span>
       </a>
     </div>
-
   </div>
 </template>
 
@@ -53,6 +51,8 @@
 
     h1 {
       flex: 1;
+      font-family: 'Francois One', sans-serif;
+      font-size: 2.5em;
       color: $text_white;
     }
 
