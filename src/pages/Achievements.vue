@@ -1,9 +1,12 @@
 <template>
-  <div class="achievements">
-    <h1>achievements</h1>
-    <div v-for="achievement in achievements">
-      <achievement :title="achievement.title" :description="achievement.description"
-                   :progress="achievement.progress"></achievement>
+  <div class="achievements columns is-mobile is-multiline">
+    <h1 class="column is-8 is-offset-3">achievements</h1>
+    <div class="column is-8 is-offset-2 is-achievement" v-for="achievement in achievements">
+      <achievement class=""
+                   :title="achievement.title"
+                   :description="achievement.description"
+                   :progress="achievement.progress">
+      </achievement>
     </div>
   </div>
 </template>
@@ -31,20 +34,16 @@
   @import "../assets/sass/main.scss";
 
   .achievements {
-    min-height: 100vh; //nessecary for less then full screen achievement color
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: $blue;
 
-    h1 {
-      color: $text_white;
+    .is-achievement {
+      margin:0.5em;
     }
 
-    .achievement {
-      /*width: 70vw;*/
-      margin: 0.4em;
+    h1 {
+      font-family: 'Francois One', sans-serif;
+      font-size: 2.5em;
+      color: $text_white;
     }
   }
 </style>

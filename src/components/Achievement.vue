@@ -1,45 +1,41 @@
 <template>
-    <div class="achievement">
-      <div v-if="progress < 100">
-        <i class="fas fa-lock-open"></i>
-      </div>
-
-      <div v-else>
-        <i class="fas fa-lock"></i>
-      </div>
-
-      <div>
-        <p>{{title}}</p>
-        <p>{{description}}</p>
-        <progress :value="progress" max="100"></progress>
-      </div>
+  <div class="achievement tile is-ancestor">
+    <div class="tile is-parent" v-if="progress < 100">
+      <i class="icon fas fa-lock-open"></i>
     </div>
+    <div class="tile is-parent" v-else>
+      <i class="icon fas fa-lock"></i>
+    </div>
+    <div class="tile is-vertical is-parent">
+      <p class="tile is-child my-title">{{title}}</p>
+      <p class="tile is-child">{{description}}</p>
+      <progress :value="progress" max="100" class="tile is-child"></progress>
+    </div>
+  </div>
 </template>
 
 <script>
   export default {
     name: 'Achievement',
-    props:{
-      title:{
+    props: {
+      title: {
         type: String,
-        default:''
+        default: ''
       },
-      description:{
+      description: {
         type: String,
-        default:''
+        default: ''
       },
-      fullfilled:{
+      fullfilled: {
         type: Boolean,
-        default:false
+        default: false
       },
-      progress:{
+      progress: {
         type: Number,
-        default:0
+        default: 0
       }
     },
-    methods: {
-
-    }
+    methods: {}
   }
 </script>
 
@@ -47,13 +43,20 @@
 <style lang="scss" scoped>
   @import "../assets/sass/main.scss";
 
-  .achievement{
-    background: white;
+  .achievement {
+    font-family: 'Francois One', sans-serif;
+    font-weight: lighter;
+    background: $text_white;
+    padding: 0.5em;
     display: flex;
-    padding: 0.5em;
+    flex-direction: row;
   }
-  .achievement div{
-    flex-direction: column;
-    padding: 0.5em;
+
+  .my-title{
+    font-weight: bold;
+  }
+
+  .icon {
+    justify-content: center;
   }
 </style>

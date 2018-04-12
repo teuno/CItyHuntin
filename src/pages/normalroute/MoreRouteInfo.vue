@@ -15,12 +15,10 @@
 <script>
   export default {
     name: 'MoreRouteInfo',
-    components: {
-
-    },
+    components: {},
     data() {
       return {
-        route: { image: "", name: 'Route 1', description: 'description of the route' }
+        route: {image: "", name: 'Route 1', description: 'description of the route'}
       }
     },
     methods: {
@@ -32,7 +30,6 @@
   }</script>
 
 <style lang="scss" scoped>
-
   @import "../../assets/sass/main";
 
   .MoreRouteInfo {
@@ -44,20 +41,19 @@
     align-items: center;
     background-color: $mint_green;
     color: $text_white;
-    img
 
-  {
-    border-radius: 50%;
-    height: auto;
-    border: 0.2em solid white;
-  }
+    img {
+      border-radius: 50%;
+      height: auto;
+      border: 0.2em solid white;
+    }
 
-  .center {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.3em;
-  }
+    .center {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.3em;
+    }
   }
 </style>
