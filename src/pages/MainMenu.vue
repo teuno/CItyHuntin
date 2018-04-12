@@ -1,32 +1,27 @@
 <template>
-  <div>
-    <div v-on:click="toTreasureHunt" class="columns height-25 treasureHunt">
-
-      <div>
-        <i class="fas fa-lock-open"></i>
+  <div class="columns is-multiline">
+    <div v-on:click="toTreasureHunt" class="column is-12 is-incenter treasureHunt">
+      <div class="is-incenter is-half">
+        <i class="far fa-map"></i>
         <h1>Treasure hunt</h1>
       </div>
-
     </div>
-
-    <div v-on:click="toNormalRoute" class="columns height-25 normalRoute">
-      <div>
-        <i class="fas fa-lock-open"></i>
-        <h1>Walk the route</h1>
+    <div v-on:click="toNormalRoute" class="column is-12 is-incenter normalRoute">
+      <div class="is-incenter is-half">
+        <i class="fas fa-map-marker-alt"></i>
+        <h1>normalroute</h1>
       </div>
     </div>
-
-    <div v-on:click="toAchievements" class="columns height-25 achievements">
-      <div>
-        <i class="fas fa-lock-open"></i>
-        <h1>Achievements</h1>
+    <div v-on:click="toAchievements" class="column is-12 is-incenter achievements">
+      <div class="is-incenter is-half">
+        <i class="fas fa-lock"></i>
+        <h1>achievements</h1>
       </div>
     </div>
-
-    <div v-on:click="toSettings" class="columns height-25 settings">
-      <div>
-        <i class="fas fa-lock-open"></i>
-        <h1>Settings</h1>
+    <div v-on:click="toSettings" class="column is-12 is-incenter settings">
+      <div class="is-incenter is-half">
+        <i class="fas fa-sliders-h"></i>
+        <h1>settings</h1>
       </div>
     </div>
   </div>
@@ -57,36 +52,6 @@
 <style lang="scss" scoped>
   @import "../assets/sass/main.scss";
 
-  div {
-    margin: 0;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-
-    color: $text_white;
-    font-family: 'Francois One', sans-serif;
-
-    font-size: 1.5em;
-
-    .height-25 {
-      min-height: 25vh;
-      align-items: center;
-      justify-content: center;
-      flex-direction: row;
-
-      div {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-  }
-
-  div .height-25 h1 {
-    margin: 0;
-  }
-
   .treasureHunt {
     background-color: $mint_green;
   }
@@ -101,5 +66,29 @@
 
   .settings {
     background-color: $navy_blue;
+  }
+
+  .columns{
+    color: $text_white;
+    font-family: 'Francois One', sans-serif;
+
+    font-size: 1.5em;
+  }
+
+  .is-half{
+    min-width: 50%;
+
+    h1{
+      margin-left:1em;
+      margin-right: auto;
+    }
+  }
+
+  .is-incenter {
+    min-height: 25vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 </style>

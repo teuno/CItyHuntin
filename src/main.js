@@ -1,5 +1,7 @@
 import Vue from 'vue'
+import Vuex from 'vuex';
 import VueRouter from 'vue-router'
+import { store } from './store/store.js';
 import MainMenu from '@/pages/MainMenu'
 import NormalRoute from '@/pages/normalroute/NormalRoute'
 import MoreRouteInfo from '@/pages/normalroute/MoreRouteInfo'
@@ -13,8 +15,8 @@ import Settings from '@/pages/Settings'
 
 // require('./assets/sass/main.scss');
 
+Vue.use(Vuex);
 Vue.use(VueRouter);
-
 
 const routes = [
   {
@@ -44,6 +46,7 @@ const router = new VueRouter({
 Vue.config.productionTip = false;
 
 new Vue({
+  store,
   router,
   template: `
     <div id="app">

@@ -3,8 +3,8 @@
 </template>
 
 <script>
-  import NormalMapStore from '../store/NormalMapStore'
   import RouteMarkerPopup from '../components/RouteMarkerPopup'
+  import store from '../store/store'
 
   export default {
     name: 'google-map',
@@ -88,7 +88,6 @@
     mounted: function () {
       this.bounds = new google.maps.LatLngBounds();
       const element = document.getElementById(this.mapName);
-
       const mapCentre = this.PointsOfInterest[0];
 
       const options = {
@@ -96,10 +95,8 @@
       };
       this.map = new google.maps.Map(element, options);
 
-
       this.PointsOfInterest.forEach((PoI) => {
         const position = new google.maps.LatLng(PoI.latitude, PoI.longitude);
-
         const popupWindow = `<div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
@@ -131,22 +128,34 @@
           map: this.map
         });
 
-
         marker.addListener('click', function () {
           infowindow.open(this.map, marker);
+          let oldWindowJSON = localStorage.getItem('window');
+          console.log(oldWindowJSON);
+          if(oldWindowJSON !== undefined && oldWindowJSON !== null){
+            //          let oldWindow = this.computed.getOpenedWindow();
+//          let oldWindow =  this.$store.getters.getOpenedWindow();
+            let oldWindow = JSON.parse(oldWindowJSON);
+            oldWindow.close();
+          }
 
-          console.log(this.lastOpenedWindow);
-          this.lastOpenedWindow = infowindow;
-          console.log(this.lastOpenedWindow);
+          localStorage.setItem('window', JSON.stringify(infowindow));
+          console.log(infowindow);
+//          this.$store.mutations.setOpenedWindow(infowindow);
         });
 
         this.markers.push(marker);
         this.map.fitBounds(this.bounds.extend(position))
       });
     },
+    computed: {
+//      ...mapGetters([
+//          'getOpenedWindow'
+//                 ])
+    },
     methods: {
 
-    }
+    },
   };
 </script>
 
