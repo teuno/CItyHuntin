@@ -4,7 +4,6 @@
 
 <script>
   import RouteMarkerPopup from '../components/RouteMarkerPopup'
-  import store from '../store/store'
 
   export default {
     name: 'google-map',
@@ -134,14 +133,12 @@
           console.log(oldWindowJSON);
           if(oldWindowJSON !== undefined && oldWindowJSON !== null){
             //          let oldWindow = this.computed.getOpenedWindow();
-//          let oldWindow =  this.$store.getters.getOpenedWindow();
             let oldWindow = JSON.parse(oldWindowJSON);
             oldWindow.close();
           }
 
           localStorage.setItem('window', JSON.stringify(infowindow));
           console.log(infowindow);
-//          this.$store.mutations.setOpenedWindow(infowindow);
         });
 
         this.markers.push(marker);

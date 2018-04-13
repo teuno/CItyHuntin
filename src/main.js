@@ -1,7 +1,5 @@
 import Vue from 'vue'
-import Vuex from 'vuex';
 import VueRouter from 'vue-router'
-import { store } from './store/store.js';
 import MainMenu from '@/pages/MainMenu'
 import NormalRoute from '@/pages/normalroute/NormalRoute'
 import MoreRouteInfo from '@/pages/normalroute/MoreRouteInfo'
@@ -15,7 +13,6 @@ import Settings from '@/pages/Settings'
 
 // require('./assets/sass/main.scss');
 
-Vue.use(Vuex);
 Vue.use(VueRouter);
 
 const routes = [
@@ -26,14 +23,14 @@ const routes = [
     }
   },
   {name: 'main', path: '/', component: MainMenu},
-  {name: 'treasurehunt', path:'/treasurehunt', component: TreasureHunt},
-  {name: 'normalroute', path:'/normalroute', component: NormalRoute},
-  {name: 'achievements', path:'/achievements', component: Achievements},
-  {name: 'settings', path:'/settings', component: Settings},
-  { name: 'summaryofroute', path: '/summaryofroute', component: SummaryOfRoute },
-  { name: 'morerouteinfo', path: '/morerouteinfo', component: MoreRouteInfo },
-  { name: 'moretreasurehuntinfo', path: '/moretreasurehuntinfo', component: MoreTreasureHuntInfo },
-  { name: 'normalroutemap', path: '/normalroutemap', component: NormalRouteMap },
+  {name: 'treasurehunt', path: '/treasurehunt', component: TreasureHunt},
+  {name: 'normalroute', path: '/normalroute', component: NormalRoute},
+  {name: 'achievements', path: '/achievements', component: Achievements},
+  {name: 'settings', path: '/settings', component: Settings},
+  {name: 'summaryofroute', path: '/summaryofroute', component: SummaryOfRoute},
+  {name: 'morerouteinfo', path: '/morerouteinfo', component: MoreRouteInfo},
+  {name: 'moretreasurehuntinfo', path: '/moretreasurehuntinfo', component: MoreTreasureHuntInfo},
+  {name: 'normalroutemap', path: '/normalroutemap', component: NormalRouteMap},
 
 ];
 
@@ -46,7 +43,6 @@ const router = new VueRouter({
 Vue.config.productionTip = false;
 
 new Vue({
-  store,
   router,
   template: `
     <div id="app">
