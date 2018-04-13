@@ -1,19 +1,40 @@
 <template>
   <div class="treasureHunt">
-    <h1>treasure hunt</h1>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            treasure hunt
+          </h1>
+        </div>
+      </div>
+    </section>
+
 
     <carousel-3d ref="carousel" :controls-visible="false" :clickable="false">
       <slide v-for="(route, i) in routes" :index="i">
         <figure @click="printDing(route.name)">
           <div class="container">
-
-            <img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Norway" width="1000" height="300">
-            <!--<img :src="route.image">-->
+            <img :src="route.image">->
             <div class="center">{{route.name}}</div>
           </div>
         </figure>
       </slide>
     </carousel-3d>
+
+    <!--<carousel-3d ref="carousel" :controls-visible="false" :clickable="false">-->
+      <!--<slide v-for="(route, i) in routes" :index="i">-->
+        <!--<figure @click="printDing(route.name)">-->
+          <!--<div class="container">-->
+
+            <!--<img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Norway" width="1000" height="300">-->
+            <!--&lt;!&ndash;<img :src="route.image">&ndash;&gt;-->
+            <!--<div class="center">{{route.name}}</div>-->
+          <!--</div>-->
+        <!--</figure>-->
+      <!--</slide>-->
+    <!--</carousel-3d>-->
 
     <div class="controls">
       <a v-on:click="left" class="button">
@@ -39,13 +60,12 @@
     data() {
       return {
         routes: [
-          {image: "", name: 'level 1'},
-          {image: "", name: 'level 2'},
-          {image: "", name: 'level 3'},
-          {image: "", name: 'level 4'},
-          {image: "", name: 'level 5'},
-          {image: "", name: 'level 6'},
-          {image: "", name: 'level 7'}
+          {image: "static/img/route_1_religious.jpeg", name: 'level 1'},
+          {image: "static/img/route_2_culture.jpeg", name: 'level 2'},
+          {image: "static/img/route_3_outside_of_city_center.jpeg", name: 'level 3'},
+          {image: "static/img/hunt_1.jpeg", name: 'level 4'},
+          {image: "static/img/hunt_2.jpeg", name: 'level 5'},
+          {image: "static/img/hunt_3.jpeg", name: 'level 6'}
         ]
       }
     },
@@ -73,29 +93,30 @@
 
   .treasureHunt {
     min-height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     background-color: $mint_green;
     color: $text_white;
 
     h1 {
-      flex: 1;
+      font-family: 'Francois One', sans-serif;
+      font-size: 2.5em;
+      color: $text_white;
     }
 
     .carousel-3d-slide {
       flex: 1;
-      opacity: 0.00000001;
+      height: 430px !important;
+      width: 430px !important;
       border-color: $mint_green;
       background-color: $mint_green;
 
       .container {
-
         img {
           border-radius: 50%;
           height: auto;
+          width: 400px;
           border: 0.2em solid white;
         }
 
@@ -114,7 +135,23 @@
 
       button {
         color: $text_deep_gray;
+        font-weight: bold;
       }
     }
+  }
+
+  div.carousel-3d-container {
+    padding: 0;
+    height: 430px !important;
+  }
+
+  div.carousel-3d-slide {
+    height: 430px !important;
+    width: 430px !important;
+  }
+
+  div.carousel-3d-slide.current {
+    height: 430px !important;
+    width: 430px !important;
   }
 </style>
