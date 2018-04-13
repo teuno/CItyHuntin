@@ -2,7 +2,7 @@
   <div class="MoreRouteInfo">
 
     <div class="container">
-      <img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Norway" width="1000" height="300">>
+      <img :src="route.image" alt="Norway">
       <div class="center">{{route.name}}</div>
     </div>
 
@@ -12,13 +12,14 @@
 
   </div>
 </template>
+
 <script>
   export default {
     name: 'MoreRouteInfo',
     components: {},
     data() {
       return {
-        route: {image: "", name: 'Route 1', description: 'description of the route'}
+        route: {image: "static/img/route_1_religious.jpeg", name: 'Route 1', description: 'description of the route'}
       }
     },
     methods: {
@@ -45,6 +46,7 @@
     img {
       border-radius: 50%;
       height: auto;
+      width: 360px;
       border: 0.2em solid white;
     }
 
@@ -54,6 +56,12 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 1.3em;
+    }
+
+    button {
+      color: $text_deep_gray;
+      width: 50%;
+      font-weight: bold;
     }
   }
 </style>

@@ -2,7 +2,7 @@
   <div class="MoreRouteInfo">
 
     <div class="container">
-      <img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Norway" width="1000" height="300">>
+      <img :src="route.image" alt="Norway">
       <div class="center">{{route.name}}</div>
     </div>
 
@@ -15,16 +15,17 @@
 <script>
   export default {
     name: 'MoreTreasureHuntInfo',
-    components: {
-
-    },
+    components: {},
     data() {
       return {
-        route: { image: "", name: 'treasure hunt 1', description: 'description of the treasure hunt' }
+        route: {
+          image: "static/img/route_1_religious.jpeg",
+          name: 'treasure hunt 1',
+          description: 'description of the treasure hunt'
+        }
       }
     },
-    methods: {
-    }
+    methods: {}
   }</script>
 
 <style lang="scss" scoped>
@@ -40,20 +41,25 @@
     align-items: center;
     background-color: $mint_green;
     color: $text_white;
-    img
 
-  {
-    border-radius: 50%;
-    height: auto;
-    border: 0.2em solid white;
-  }
+    img {
+      border-radius: 50%;
+      height: auto;
+      width: 360px;
+      border: 0.2em solid white;
+    }
 
-  .center {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.3em;
-  }
+    .center {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.3em;
+    }
+    button {
+      color: $text_deep_gray;
+      width: 50%;
+      font-weight: bold;
+    }
   }
 </style>
