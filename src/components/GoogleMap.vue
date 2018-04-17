@@ -90,6 +90,7 @@
         infowindow: null,
         current_location: {lat: 52.5031674, lng: 6.0840261},
         finishable: false,
+        geoLocationOptions: { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true },
       }
     },
     mounted: function () {
@@ -146,7 +147,7 @@
     methods: {
       getLocation: function () {
         if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(this.checkPosition);
+          navigator.geolocation.getCurrentPosition(this.checkPosition,()=>null, this.geoLocationOptions);
         } else {
           console.log("Geolocation is not supported by this browser.");
         }
