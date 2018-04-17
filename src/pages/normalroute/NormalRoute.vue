@@ -1,5 +1,5 @@
 <template>
-  <div class="normalRoute">
+  <div class="normalRoute columns is-multiline">
 
     <section class="hero">
       <div class="hero-body">
@@ -12,7 +12,7 @@
     </section>
 
     <carousel-3d ref="carousel" :controls-visible="false" :clickable="false">
-      <slide v-for="(route, i) in routes" :index="i">
+      <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure @click="printDing(route.name)">
           <div class="container">
             <img :src="route.image">->

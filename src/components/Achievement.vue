@@ -1,6 +1,6 @@
 <template>
   <div class="achievement tile is-ancestor">
-    <div class="tile is-parent" v-if="progress < 100">
+    <div class="tile is-parent" v-if="progress > 99">
       <i class="icon fas fa-lock-open"></i>
     </div>
     <div class="tile is-parent" v-else>

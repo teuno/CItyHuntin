@@ -1,5 +1,10 @@
 <template>
-  <div class="google-map" :id="mapName"></div>
+  <div>
+    <button v-on:click="getLocation">click</button>
+    <div class="google-map" :id="mapName"></div>
+    <button v-if="finishable" v-on:click="">Finish this</button>
+  </div>
+
 </template>
 
 <script>
@@ -82,6 +87,9 @@
         map: null,
         bounds: null,
         markers: [],
+        infowindow: null,
+        current_location: {lat: 52.5031674, lng: 6.0840261},
+        finishable: false,
       }
     },
     mounted: function () {
@@ -129,29 +137,45 @@
 
         marker.addListener('click', function () {
           infowindow.open(this.map, marker);
-          let oldWindowJSON = localStorage.getItem('window');
-          console.log(oldWindowJSON);
-          if(oldWindowJSON !== undefined && oldWindowJSON !== null){
-            //          let oldWindow = this.computed.getOpenedWindow();
-            let oldWindow = JSON.parse(oldWindowJSON);
-            oldWindow.close();
-          }
-
-          localStorage.setItem('window', JSON.stringify(infowindow));
-          console.log(infowindow);
         });
 
         this.markers.push(marker);
         this.map.fitBounds(this.bounds.extend(position))
       });
     },
-    computed: {
-//      ...mapGetters([
-//          'getOpenedWindow'
-//                 ])
-    },
     methods: {
+      getLocation: function () {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(this.checkPosition);
+        } else {
+          console.log("Geolocation is not supported by this browser.");
+        }
+      },
+      checkPosition: function (position) {
+        this.distance_from(position);
 
+
+      },
+      distance_from: function (position) {
+//        console.log("location");
+//        console.log(position.coords);
+//        console.log("static");
+//        console.log(this.current_location);
+        const errorRange = 0.1;
+
+        if ((position.coords.latitude + errorRange ) >= this.current_location.lat &&
+            (position.coords.latitude - errorRange ) <= this.current_location.lat &&
+            (position.coords.longitude + errorRange ) >= this.current_location.lng &&
+            (position.coords.longitude - errorRange ) <= this.current_location.lng) {
+          console.log("You finished the run");
+          this.finishable = true;
+        }
+      },
+      AllLocationsAreFinised: function () {
+        let finished = {status: false}
+        finished.status = this.PointsOfInterest.every(x => x.visited === true)
+        return finished;
+      }
     },
   };
 </script>

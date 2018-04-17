@@ -3,21 +3,21 @@
     <h1>settings</h1>
 
     <div class="settings-menu">
-      <a class="button is-large">
+      <a v-on:click="profile" class="button is-large">
   <span class="icon is-medium">
   <i class="fas fa-user"></i>
   </span>
         <span>Profile</span>
       </a>
 
-      <a class="button is-large">
+      <a v-on:click="language" class="button is-large">
   <span class="icon is-medium">
   <i class="fas fa-volume-up"></i>
   </span>
         <span>Language</span>
       </a>
 
-      <a class="button is-large">
+      <a v-on:click="termsAndConditions" class="button is-large">
   <span class="icon is-medium">
   <i class="fas fa-search"></i>
   </span>
@@ -32,13 +32,23 @@
     name: 'Settings',
 
 
-    methods: {}
+    methods: {
+      profile: function () {
+        this.$router.push({name: 'profile'})
+      },
+      language: function () {
+        this.$router.push({name: 'language'})
+      },
+      termsAndConditions: function () {
+        this.$router.push({name: 'termsAndConditions'})
+      },
+    }
   }
 </script>
 
 
 <style lang="scss" scoped>
-  @import "../assets/sass/main.scss";
+  @import "../../assets/sass/main";
 
   .settings {
     min-height: 100vh;
