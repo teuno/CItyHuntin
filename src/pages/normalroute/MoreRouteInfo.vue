@@ -40,7 +40,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: $mint_green;
+    background-color: $green;
     color: $text_white;
 
     img {

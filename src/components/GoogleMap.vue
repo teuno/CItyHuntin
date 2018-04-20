@@ -87,7 +87,9 @@
         map: null,
         bounds: null,
         markers: [],
-        infowindow: null,
+        lastCalled: undefined,
+        marker: undefined,
+        infowindow: undefined,
         current_location: {lat: 52.5031674, lng: 6.0840261},
         finishable: false,
         geoLocationOptions: { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true },
@@ -103,8 +105,10 @@
       };
       this.map = new google.maps.Map(element, options);
 
-      this.PointsOfInterest.forEach((PoI) => {
-        const position = new google.maps.LatLng(PoI.latitude, PoI.longitude);
+
+      for(let i=0; i< this.PointsOfInterest.length;i++){
+
+        const position = new google.maps.LatLng(this.PointsOfInterest[i].latitude, this.PointsOfInterest[i].longitude);
         const popupWindow = `<div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
@@ -114,20 +118,20 @@
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title is-4">${PoI.name}</p>
+        <p class="title is-4">${this.PointsOfInterest[i].name}</p>
       </div>
     </div>
 
     <div class="content">
-      ${PoI.description}
+      ${this.PointsOfInterest[i].description}
       <br>
-      <time datetime="2016-1-1">${PoI.date_build}</time>
+      <time datetime="2016-1-1">${this.PointsOfInterest[i].date_build}</time>
     </div>
   </div>
 </div>`
         // `<route-marker-popup :name=${PoI.name} :description=${PoI.description}></route-marker-popup>`;
 
-        const infowindow = new google.maps.InfoWindow({
+        this.infowindow = new google.maps.InfoWindow({
           content: popupWindow
         });
 
@@ -135,14 +139,73 @@
           position,
           map: this.map
         });
-
-        marker.addListener('click', function () {
-          infowindow.open(this.map, marker);
-        });
-
         this.markers.push(marker);
         this.map.fitBounds(this.bounds.extend(position))
-      });
+
+
+        google.maps.event.addListener(marker, 'click',this.openPopup);
+
+
+//        function(){
+//          let bla = this;
+//          console.log(bla);
+//          if(this.lastCalled !== undefined){
+////            console.log('in '+this.lastCalled);
+//            this.lastCalled.close();
+//          }
+////          console.log('out '+this.lastCalled);
+//
+//          infowindow.open(this.map, marker);
+//          this.lastCalled = infowindow;
+//        }
+
+
+      }
+
+
+//      this.PointsOfInterest.forEach((PoI) => {
+//        const position = new google.maps.LatLng(PoI.latitude, PoI.longitude);
+//        const popupWindow = `<div class="card">
+//  <div class="card-image">
+//    <figure class="image is-4by3">
+//      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+//    </figure>
+//  </div>
+//  <div class="card-content">
+//    <div class="media">
+//      <div class="media-content">
+//        <p class="title is-4">${PoI.name}</p>
+//      </div>
+//    </div>
+//
+//    <div class="content">
+//      ${PoI.description}
+//      <br>
+//      <time datetime="2016-1-1">${PoI.date_build}</time>
+//    </div>
+//  </div>
+//</div>`
+//        // `<route-marker-popup :name=${PoI.name} :description=${PoI.description}></route-marker-popup>`;
+//
+//        const infowindow = new google.maps.InfoWindow({
+//          content: popupWindow
+//        });
+//
+//        const marker = new google.maps.Marker({
+//          position,
+//          map: this.map
+//        });
+//
+//        marker.addListener('click', function () {
+////          console.log(this.markers);
+//          infowindow.open(this.map, marker);
+////          this.lastCalled.push(infowindow);
+//
+//        });
+//
+////        this.markers.push(marker);
+//        this.map.fitBounds(this.bounds.extend(position))
+//      });
     },
     methods: {
       getLocation: function () {
