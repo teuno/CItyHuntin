@@ -1,24 +1,24 @@
 <template>
-  <div class="columns is-multiline">
-    <div v-on:click="toTreasureHunt" class="column is-12 is-incenter treasureHunt">
+  <div class="columns is-multiline is-marginless">
+    <div v-on:click="toTreasureHunt" class="column is-paddingless is-12 is-incenter treasureHunt">
       <div class="is-incenter is-half">
         <i class="far fa-map"></i>
         <h1>Treasure hunt</h1>
       </div>
     </div>
-    <div v-on:click="toNormalRoute" class="column is-12 is-incenter normalRoute">
+    <div v-on:click="toNormalRoute" class="column is-paddingless is-12 is-incenter normalRoute">
       <div class="is-incenter is-half">
         <i class="fas fa-map-marker-alt"></i>
         <h1>normalroute</h1>
       </div>
     </div>
-    <div v-on:click="toAchievements" class="column is-12 is-incenter achievements">
+    <div v-on:click="toAchievements" class="column is-paddingless is-12 is-incenter achievements">
       <div class="is-incenter is-half">
         <i class="fas fa-lock"></i>
         <h1>achievements</h1>
       </div>
     </div>
-    <div v-on:click="toSettings" class="column is-12 is-incenter settings">
+    <div v-on:click="toSettings" class="column is-paddingless is-12 is-incenter settings">
       <div class="is-incenter is-half">
         <i class="fas fa-sliders-h"></i>
         <h1>settings</h1>

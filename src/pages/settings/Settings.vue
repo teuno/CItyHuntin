@@ -1,6 +1,16 @@
 <template>
   <div class="settings">
-    <h1>settings</h1>
+
+    <section class="hero is-medium">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            settings
+          </h1>
+        </div>
+      </div>
+    </section>
+
 
     <div class="settings-menu">
       <a v-on:click="profile" class="button is-large">
@@ -77,5 +87,12 @@
         width: 70vw;
       }
     }
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
 </style>
