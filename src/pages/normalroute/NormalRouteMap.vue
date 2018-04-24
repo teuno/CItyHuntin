@@ -27,11 +27,9 @@
 </template>
 
 <script>
-
   export default {
     name: 'NormalRouteMap',
     components: {
-//      GoogleMap
     },
     data: function () {
       return {

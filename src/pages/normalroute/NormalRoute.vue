@@ -15,7 +15,7 @@
       <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure @click="printDing(route.name)">
           <div class="container">
-            <img :src="route.image">->
+            <img :src="route.image">
             <div class="center">{{route.name}}</div>
           </div>
         </figure>
