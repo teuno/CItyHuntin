@@ -29,7 +29,6 @@
   }</script>
 
 <style lang="scss" scoped>
-
   @import "../../assets/sass/main";
 
   .MoreRouteInfo {
@@ -42,19 +41,25 @@
     background-color: $mint_green;
     color: $text_white;
 
-    img {
-      border-radius: 50%;
-      height: auto;
-      width: 360px;
-      border: 0.2em solid white;
-    }
+    .container{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
 
-    .center {
-      position: absolute;
-      top: 80%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 1.3em;
+      img {
+        border-radius: 50%;
+        height: auto;
+        width: 80%;
+        border: 0.2em solid white;
+      }
+      .center {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.3em;
+      }
     }
     button {
       color: $text_deep_gray;

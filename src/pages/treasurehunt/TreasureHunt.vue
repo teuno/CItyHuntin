@@ -1,5 +1,6 @@
 <template>
-  <div class="treasureHunt">
+  <div class="treasureHunt columns is-multiline is-marginless">
+
 
     <section class="hero">
       <div class="hero-body">
@@ -12,7 +13,8 @@
     </section>
 
 
-    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false">
+
+    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="300" :height="320">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure @click="printDing(route.name)">
           <div class="container">
@@ -22,19 +24,6 @@
         </figure>
       </slide>
     </carousel-3d>
-
-    <!--<carousel-3d ref="carousel" :controls-visible="false" :clickable="false">-->
-      <!--<slide v-for="(route, i) in routes" :index="i">-->
-        <!--<figure @click="printDing(route.name)">-->
-          <!--<div class="container">-->
-
-            <!--<img src="https://www.w3schools.com/css/trolltunga.jpg" alt="Norway" width="1000" height="300">-->
-            <!--&lt;!&ndash;<img :src="route.image">&ndash;&gt;-->
-            <!--<div class="center">{{route.name}}</div>-->
-          <!--</div>-->
-        <!--</figure>-->
-      <!--</slide>-->
-    <!--</carousel-3d>-->
 
     <div class="controls">
       <a v-on:click="left" class="button">
@@ -105,31 +94,6 @@
       color: $text_white;
     }
 
-    .carousel-3d-slide {
-      flex: 1;
-      height: 430px !important;
-      width: 430px !important;
-      border-color: $mint_green;
-      background-color: $mint_green;
-
-      .container {
-        img {
-          border-radius: 50%;
-          height: auto;
-          width: 400px;
-          border: 0.2em solid white;
-        }
-
-        .center {
-          position: absolute;
-          top: 80%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 1.3em;
-        }
-      }
-    }
-
     .controls {
       flex: 1;
 
@@ -140,18 +104,31 @@
     }
   }
 
-  div.carousel-3d-container {
-    padding: 0;
-    height: 430px !important;
+  img {
+    border-radius: 50%;
+    border: 0.2em solid white;
   }
 
-  div.carousel-3d-slide {
-    height: 430px !important;
-    width: 430px !important;
+  .center {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3em;
   }
 
-  div.carousel-3d-slide.current {
-    height: 430px !important;
-    width: 430px !important;
+  .carousel-3d-slide {
+    flex: 1;
+    border-color: $mint_green;
+    background-color: $mint_green;
+
+    .center {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.3em;
+    }
   }
+
 </style>

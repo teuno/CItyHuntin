@@ -1,5 +1,5 @@
 <template>
-  <div class="normalRoute columns is-multiline">
+  <div class="normalRoute columns is-multiline is-marginless">
 
     <section class="hero">
       <div class="hero-body">
@@ -11,7 +11,7 @@
       </div>
     </section>
 
-    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false">
+    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="300" :height="320">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure @click="printDing(route.name)">
           <div class="container">
@@ -95,31 +95,6 @@
       color: $text_white;
     }
 
-    .carousel-3d-slide {
-      flex: 1;
-      height: 430px !important;
-      width: 430px !important;
-      border-color: $green;
-      background-color: $green;
-
-      .container {
-        img {
-          border-radius: 50%;
-          height: auto;
-          width: 400px;
-          border: 0.2em solid white;
-        }
-
-        .center {
-          position: absolute;
-          top: 80%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 1.3em;
-        }
-      }
-    }
-
     .controls {
       flex: 1;
 
@@ -130,20 +105,30 @@
     }
   }
 
-  div.carousel-3d-container {
-    padding: 0;
-    height: 430px !important;
+  img {
+    border-radius: 50%;
+    border: 0.2em solid white;
   }
 
-  div.carousel-3d-slide {
-    height: 430px !important;
-    width: 430px !important;
+  .center {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3em;
   }
 
-  div.carousel-3d-slide.current {
-    height: 430px !important;
-    width: 430px !important;
+  .carousel-3d-slide {
+    flex: 1;
+    border-color: $green;
+    background-color: $green;
+
+    .center {
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.3em;
+    }
   }
-
-
 </style>
