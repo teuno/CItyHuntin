@@ -1,7 +1,4 @@
 <template>
-  <!--<google-map-->
-  <!--name="example"-->
-  <!--&gt;</google-map>-->
   <gmap-map
     ref="gmap"
     :center="center"
@@ -9,7 +6,12 @@
     style="width:100%;  height: 100vh;"
   >
 
-    <gmap-info-window :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
+    <gmap-info-window
+      :options="infoOptions"
+      :position="infoWindowPos"
+      :opened="infoWinOpen"
+      @closeclick="infoWinOpen=false"
+    >
       <div v-html="infoContent"></div>
     </gmap-info-window>
 
@@ -25,8 +27,6 @@
 </template>
 
 <script>
-  //  import GoogleMap from '../../components/GoogleMap'
-
 
   export default {
     name: 'NormalRouteMap',
@@ -119,6 +119,10 @@
             position: {lat: 52.512850, lng: 6.089429}
           }
         ],
+
+        //test for geolocation
+        currentLocation : { lat : 0, lng : 0},
+        geoLocationOptions: { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true },
       }
     },
     mounted() {
@@ -134,7 +138,21 @@
     methods: {
       toggleInfoWindow: function (marker, idx) {
         this.infoWindowPos = marker.position;
-        this.infoContent = `<div class="card">
+        this.infoContent = this.getInfoWindowContent(marker);
+
+        //check if its the same marker that was selected if yes toggle
+        if (this.currentMidx == idx) {
+          this.infoWinOpen = !this.infoWinOpen;
+        }
+        //if different marker set infowindow to open and reset current marker index
+        else {
+          this.infoWinOpen = true;
+          this.currentMidx = idx;
+        }
+      },
+
+      getInfoWindowContent: function (marker) {
+        return (`<div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
       <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
@@ -153,17 +171,19 @@
       <time datetime="2016-1-1">${marker.date_build}</time>
     </div>
   </div>
-</div>`;
+</div>`);
+      },
 
-        //check if its the same marker that was selected if yes toggle
-        if (this.currentMidx == idx) {
-          this.infoWinOpen = !this.infoWinOpen;
-        }
-        //if different marker set infowindow to open and reset current marker index
-        else {
-          this.infoWinOpen = true;
-          this.currentMidx = idx;
-        }
+
+
+      //geolocation methods
+      setCurrentLocation : function() {
+        navigator.geolocation.getCurrentPosition((position, options = this.geoLocationOptions) => {
+          this.currentLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+        });
       },
     }
   }
