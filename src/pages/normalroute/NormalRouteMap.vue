@@ -1,4 +1,10 @@
 <template>
+  <div>
+  <button @click="getLocation">click</button>
+    <label>{{text}}</label>
+  <!--<div class="google-map" :id="mapName"></div>-->
+  <button v-if="finishable" v-on:click="">Finish this</button>
+
   <gmap-map
     ref="gmap"
     :center="center"
@@ -23,7 +29,7 @@
     </gmap-marker>
   </gmap-map>
 
-
+  </div>
 </template>
 
 <script>
@@ -33,6 +39,8 @@
     },
     data: function () {
       return {
+        text: "",
+
         //needed for something, cuz else errors
         center: {lat: 45.508, lng: -73.587},
         //the map
@@ -120,7 +128,11 @@
 
         //test for geolocation
         currentLocation : { lat : 0, lng : 0},
-        geoLocationOptions: { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true },
+        finishable: false,
+        geoLocationOptions: { /*All needed for it to work an a android device*/
+          /*higher then how long ago we send request*/maximumAge: 30000,
+          timeout: 5000,
+          enableHighAccuracy: true },
       }
     },
     mounted() {
@@ -173,9 +185,49 @@
       },
 
 
-
       //geolocation methods
-      setCurrentLocation : function() {
+      getLocation: function () {
+        console.log("in get Location");
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(this.checkLocationSharing,this.checkLocationSharing, this.geoLocationOptions);
+        } else {
+          console.log("Geolocation is not supported by this browser.");
+        }
+      },
+      checkLocationSharing: function (position) {
+        console.log(position);
+        if(position.code  === 2){
+          console.log(position.message);
+        }
+        else if(position.code  === 3){
+          alert("plz turn on you location sharing under instellingen->safety and protection-> location.");
+          console.log("plz turn on you location sharing under instellingen->safety and protection-> location.");
+        }else{
+          this.distance_from(position);
+        }
+      },
+      distance_from: function (position) {
+        console.log(position);
+        console.log(position.coords);
+        const errorRange = 0.1;
+        this.text = 'hoi';
+
+        if ((position.coords.latitude + errorRange ) >= this.currentLocation.lat &&
+          (position.coords.latitude - errorRange ) <= this.currentLocation.lat &&
+          (position.coords.longitude + errorRange ) >= this.currentLocation.lng &&
+          (position.coords.longitude - errorRange ) <= this.currentLocation.lng) {
+          console.log("You finished the run");
+          this.finishable = true;
+        }
+      },
+      AllLocationsAreFinised: function () {
+        let finished = {status: false}
+        finished.status = this.PointsOfInterest.every(x => x.visited === true)
+        return finished;
+      }
+    },
+
+    setCurrentLocation : function() {
         navigator.geolocation.getCurrentPosition((position, options = this.geoLocationOptions) => {
           this.currentLocation = {
             lat: position.coords.latitude,
@@ -183,6 +235,6 @@
           };
         });
       },
-    }
+
   }
 </script>

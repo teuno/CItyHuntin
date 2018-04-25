@@ -19,6 +19,11 @@ import Language from '@/pages/settings/Language'
 import TermsAndConditions from '@/pages/settings/TermsAndConditions'
 
 
+import PageTitle from './components/PageTitle.vue'
+Vue.component('page-title', PageTitle);
+
+
+
 Vue.use(VueRouter);
 Vue.use(VueCordova);
 

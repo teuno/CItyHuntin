@@ -1,6 +1,7 @@
 <template>
   <div class="settings">
 
+
     <section class="hero is-medium">
       <div class="hero-body">
         <div class="container">
@@ -41,7 +42,11 @@
   export default {
     name: 'Settings',
 
-
+    data() {
+      return {
+        title: 'settings'
+      }
+    },
     methods: {
       profile: function () {
         this.$router.push({name: 'profile'})
@@ -89,7 +94,7 @@
     }
   }
 
-  .container{
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;

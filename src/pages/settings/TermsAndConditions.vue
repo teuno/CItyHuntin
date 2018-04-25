@@ -1,6 +1,7 @@
 <template>
   <div class="profile">
-    <h1>Terms and Conditions</h1>
+    <page-title :title="title" :color="'#FFFFFF'"></page-title>
+
 
 
 
@@ -11,7 +12,11 @@
   export default {
     name: 'Settings',
 
-
+    data() {
+      return {
+        title: 'Terms and Conditions'
+      }
+    },
     methods: {
 
     }
@@ -22,5 +27,10 @@
 <style lang="scss" scoped>
   @import "../../assets/sass/main";
 
+  .profile {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: $navy_blue;
+  }
 
 </style>

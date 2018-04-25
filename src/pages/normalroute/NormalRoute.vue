@@ -1,15 +1,8 @@
 <template>
   <div class="normalRoute columns is-multiline is-marginless">
 
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            Walk the route
-          </h1>
-        </div>
-      </div>
-    </section>
+    <page-title :title="title"></page-title>
+
 
     <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="300" :height="320">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
@@ -43,10 +36,11 @@
     name: 'NormalRoute',
     components: {
       Carousel3d,
-      Slide
+      Slide,
     },
     data() {
       return {
+        title: ' Walk the route',
         routes: [
           {image: "static/img/route_1_religious.jpeg", name: 'level 1'},
           {image: "static/img/route_2_culture.jpeg", name: 'level 2'},

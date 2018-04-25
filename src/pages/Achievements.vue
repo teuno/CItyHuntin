@@ -37,6 +37,7 @@
     },
     data() {
       return {
+        title: 'achievements',
         achievements: data
       }
     },
