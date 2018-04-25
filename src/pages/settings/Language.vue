@@ -2,7 +2,7 @@
   <div class="profile">
     <page-title :title="title" :color="'#FFFFFF'"></page-title>
 
-    <div class="settings-menu">
+    <div class="is-column-centered">
       <a v-on:click="" class="button is-large">
   <span class="icon is-medium">
   <i class="fas fa-language"></i>
@@ -44,16 +44,8 @@
     background-color: $navy_blue;
   }
 
-  .settings-menu {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    a {
-      margin: 0.4em;
-      width: 70vw;
-    }
+  a {
+    margin: 0.4em;
+    width: 70vw;
   }
-
 </style>

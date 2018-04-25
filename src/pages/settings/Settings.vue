@@ -13,7 +13,7 @@
     </section>
 
 
-    <div class="settings-menu">
+    <div class="is-column-centered">
       <a v-on:click="profile" class="button is-large">
   <span class="icon is-medium">
   <i class="fas fa-user"></i>
@@ -81,17 +81,11 @@
       color: $text_white;
     }
 
-    .settings-menu {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      a {
-        margin: 0.4em;
-        width: 70vw;
-      }
+    a {
+      margin: 0.4em;
+      width: 70vw;
     }
+
   }
 
   .container {
