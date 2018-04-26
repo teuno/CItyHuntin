@@ -33,6 +33,7 @@
 </template>
 
 <script>
+  import data from '../../assets/json/influencial_peopledata'
   export default {
     name: 'NormalRouteMap',
     components: {
@@ -60,71 +61,7 @@
             height: -35
           }
         },
-
-        PointsOfInterest: [
-          {
-            name: "House of Aleida Greve",
-            description: "description 1",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.512942, lng: 6.089625}
-          },
-          {
-            name: "House of Potgieter",
-            description: "description 2",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.511950, lng: 6.091056}
-          },
-          {
-            name: "House of Johannes Cele",
-            description: "description 3",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.511047, lng: 6.091728}
-          },
-          {
-            name: "House of Emmanuel van Twenhuysen",
-            description: "description 3",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.510629, lng: 6.092635}
-          },
-          {
-            name: "Hof van Suythem",
-            description: "description 3",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.510341, lng: 6.092704}
-          },
-          {
-            name: "House of Rheinvis Feit",
-            description: "description 3",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.510138, lng: 6.093540}
-          },
-          {
-            name: "House of Joan van der Capellen",
-            description: "description 3",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.511047, lng: 6.091728}
-          }, {
-            name: "Hof van Ittersum",
-            description: "description 3",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.511308, lng: 6.094390}
-          },
-          {
-            name: "House of admiral Jacob Pieter van Braam",
-            description: "description 3",
-            date_build: "",
-            image_url: "",
-            position: {lat: 52.512850, lng: 6.089429}
-          }
-        ],
+        PointsOfInterest: data,
 
         //test for geolocation
         currentLocation : { lat : 0, lng : 0},

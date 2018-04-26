@@ -28,6 +28,7 @@
 </template>
 
 <script>
+  import data from '../../assets/json/routesData'
   import {Carousel3d, Slide} from 'vue-carousel-3d';
 
   export default {
@@ -39,14 +40,7 @@
     data() {
       return {
         title: 'treasure hunt',
-        routes: [
-          {image: "static/img/route_1_religious.jpeg", name: 'level 1'},
-          {image: "static/img/route_2_culture.jpeg", name: 'level 2'},
-          {image: "static/img/route_3_outside_of_city_center.jpeg", name: 'level 3'},
-          {image: "static/img/hunt_1.jpeg", name: 'level 4'},
-          {image: "static/img/hunt_2.jpeg", name: 'level 5'},
-          {image: "static/img/hunt_3.jpeg", name: 'level 6'}
-        ]
+        routes: data,
       }
     },
     methods: {

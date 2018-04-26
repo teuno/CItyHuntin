@@ -1,4 +1,5 @@
 <template>
+  <!--a save button and cancel to go back to previous page-->
   <div class="profile">
 
     <page-title :title="title" :color="'#FFFFFF'"></page-title>
@@ -20,7 +21,7 @@
                     </a>
                   </p>
                   <p class="control is-expanded">
-                    <input class="input" type="tel" placeholder="Your username">
+                    <input class="input" type="text" placeholder="Your username">
                   </p>
                 </div>
               </div>
@@ -64,9 +65,29 @@
               </div>
             </div>
           </div>
+
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button is-link">
+                Save changes
+              </a>
+            </p>
+            <p class="control">
+              <a class="button">
+                Cancel
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-danger">
+                Delete post
+              </a>
+            </p>
+          </div>
         </form>
       </div>
     </section>
+
+
 
 
   </div>

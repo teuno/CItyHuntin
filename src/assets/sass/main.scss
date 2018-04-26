@@ -13,11 +13,13 @@ $navy_blue : #3420A4;
 
 
 
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Roboto');
+
 
 //
-$coolvetica_1 : Coolvetica;
+$francois_one: "'Francois One', sans-serif";
 //$coolvetica_2 : "";
-//$roboto_black :  "";
+$roboto_black :  "'Roboto', sans-serif";
 //$roboto_white : "";
 
 .is-column-centered {
@@ -27,3 +29,6 @@ $coolvetica_1 : Coolvetica;
   align-items: center;
 }
 
+body{
+  font-family: $roboto_black;
+}

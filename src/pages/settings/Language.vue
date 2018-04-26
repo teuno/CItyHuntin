@@ -1,19 +1,16 @@
 <template>
+  <!--flag icon or no icon-->
   <div class="profile">
     <page-title :title="title" :color="'#FFFFFF'"></page-title>
 
     <div class="is-column-centered">
       <a v-on:click="" class="button is-large">
-  <span class="icon is-medium">
-  <i class="fas fa-language"></i>
-  </span>
-        <span>Dutch</span><!-- app is english, so so should the dutch name-->
+        <span class="icon flag-icon flag-icon-nl is-medium "></span>
+        <span>Dutch</span>
       </a>
 
       <a v-on:click="" class="button is-large">
-  <span class="icon is-medium">
-  <i class="fas fa-language"></i>
-  </span>
+        <span class="icon flag-icon flag-icon-gb "></span>
         <span>English</span>
       </a>
     </div>

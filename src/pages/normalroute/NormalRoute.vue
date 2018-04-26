@@ -1,4 +1,5 @@
 <template>
+  <!--make slider stay in middle but same size-->
   <div class="normalRoute columns is-multiline is-marginless">
 
     <page-title :title="title"></page-title>
@@ -6,7 +7,7 @@
 
     <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="300" :height="320">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
-        <figure @click="printDing(route.name)">
+        <figure>
           <div class="container">
             <img :src="route.image">
             <div class="center">{{route.name}}</div>
@@ -20,16 +21,18 @@
       <a v-on:click="left" class="button">
         <i class="fa fa-caret-left"></i>
       </a>
-      <button v-on:click="goToRouteSummary" class="button is-rounded">Choose route</button>
+      <button v-on:click="goToMoreRouteInfo" class="button is-rounded">Choose route</button>
       <a v-on:click="right" class="button">
         <i class="fa fa-caret-right"></i>
       </a>
     </div>
 
+
   </div>
 </template>
 
 <script>
+  import data from '../../assets/json/routesData'
   import {Carousel3d, Slide} from 'vue-carousel-3d';
 
   export default {
@@ -41,22 +44,12 @@
     data() {
       return {
         title: ' Walk the route',
-        routes: [
-          {image: "static/img/route_1_religious.jpeg", name: 'level 1'},
-          {image: "static/img/route_2_culture.jpeg", name: 'level 2'},
-          {image: "static/img/route_3_outside_of_city_center.jpeg", name: 'level 3'},
-          {image: "static/img/hunt_1.jpeg", name: 'level 4'},
-          {image: "static/img/hunt_2.jpeg", name: 'level 5'},
-          {image: "static/img/hunt_3.jpeg", name: 'level 6'}
-        ]
+        routes: data,
       }
     },
     methods: {
       ding: function () {
         console.log(this.$refs.carousel.currentIndex);
-      },
-      printDing: function (name) {
-        console.log(name);
       },
       left: function () {
         this.$refs.carousel.goPrev();
@@ -64,8 +57,10 @@
       right: function () {
         this.$refs.carousel.goNext();
       },
-      goToRouteSummary: function () {
-        this.$router.push({name: 'morerouteinfo'})
+      goToMoreRouteInfo: function () {
+        let index = this.$refs.carousel.currentIndex;
+        const props = {image: data[index].image, name: data[index].name, description: data[index].description};
+        this.$router.push({name: 'morerouteinfo', params: props})
       }
     },
   }

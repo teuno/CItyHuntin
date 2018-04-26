@@ -2,13 +2,13 @@
   <div class="MoreRouteInfo">
 
     <div class="container">
-      <img :src="route.image" alt="Norway">
-      <div class="center">{{route.name}}</div>
+      <img :src="image" alt="Norway">
+      <div class="center">{{name}}</div>
     </div>
 
-    <label>{{route.description}}</label>
+    <label>{{description}}</label>
 
-    <button v-on:click="goToRouteMapSummary" class="button is-rounded">Start route</button>
+    <button @click="goToRouteMapSummary" class="button is-rounded">Start route</button>
 
   </div>
 </template>
@@ -17,18 +17,27 @@
   export default {
     name: 'MoreRouteInfo',
     components: {},
-    data() {
-      return {
-        route: {image: "static/img/route_1_religious.jpeg", name: 'Route 1', description: 'description of the route'}
-      }
+    props: {
+      image: {
+        type: String,
+        default: ' '
+      },
+      name: {
+        type: String,
+        default: ' '
+      },
+      description: {
+        type: String,
+        default: ' '
+      },
     },
     methods: {
       goToRouteMapSummary: function () {
         this.$router.push({name: 'normalroutemap'})
       }
     }
-
-  }</script>
+  }
+</script>
 
 <style lang="scss" scoped>
   @import "../../assets/sass/main";
