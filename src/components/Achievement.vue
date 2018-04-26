@@ -16,7 +16,7 @@
 
 <script>
   export default {
-    name: 'Achievement',
+    name: 'Achievement  ff',
     props: {
       title: {
         type: String,
