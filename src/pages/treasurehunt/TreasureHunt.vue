@@ -4,7 +4,7 @@
     <page-title :title="title"></page-title>
 
 
-    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="300" :height="320">
+    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="windowWidth" :height="windowHeight">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure @click="printDing(route.name)">
           <div class="container">
@@ -41,12 +41,13 @@
       return {
         title: 'treasure hunt',
         routes: data,
+        windowHeight: 0,
+        windowWidth: 0,
       }
     },
     methods: {
       goToTreasureHuntSummary: function () {
         this.$router.push({name: 'moretreasurehuntinfo'})
-//        console.log(this.$refs.carousel.currentIndex);
       },
       printDing: function (name) {
         console.log(name);
@@ -57,7 +58,32 @@
       right: function () {
         this.$refs.carousel.goNext();
       }
-    }
+    },
+    mounted() {
+      let that = this;
+      this.$nextTick(function() {
+        window.addEventListener('mouseover', function(e) {
+//          console.log("width: "+ window.innerWidth+" height: "+ window.innerHeight);
+          if(window.innerHeight < 660){
+            that.windowHeight = 320;
+            that.windowWidth = 300;
+          }
+          else if(window.innerHeight < 760){
+            that.windowHeight = 400;
+            that.windowWidth = 330;
+          }
+          else if(window.innerHeight < 860){
+            that.windowHeight = 450;
+            that.windowWidth = 370;
+          }
+          else{
+            that.windowHeight = 550;
+            that.windowWidth = 320;
+          }
+        });
+      });
+      dispatchEvent(new Event('mouseover'));
+    },
   }
 </script>
 

@@ -1,11 +1,10 @@
 <template>
-  <!--make slider stay in middle but same size (solve with media query?)-->
   <div class="normalRoute columns is-multiline is-marginless">
 
     <page-title :title="title"></page-title>
 
 
-    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="300" :height="320">
+    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="windowWidth" :height="windowHeight">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure>
           <div class="container">
@@ -43,6 +42,8 @@
       return {
         title: ' Walk the route',
         routes: data,
+        windowHeight: 0,
+        windowWidth: 0,
       }
     },
     methods: {
@@ -57,6 +58,31 @@
         const props = {image: data[index].image, name: data[index].name, description: data[index].description, jsonfile: data[index].jsonfile};
         this.$router.push({name: 'morerouteinfo', params: props})
       }
+    },
+    mounted() {
+      let that = this;
+      this.$nextTick(function() {
+        window.addEventListener('mouseover', function(e) {
+//          console.log("width: "+ window.innerWidth+" height: "+ window.innerHeight);
+          if(window.innerHeight < 660){
+            that.windowHeight = 320;
+            that.windowWidth = 300;
+          }
+          else if(window.innerHeight < 760){
+            that.windowHeight = 400;
+            that.windowWidth = 330;
+          }
+          else if(window.innerHeight < 860){
+            that.windowHeight = 450;
+            that.windowWidth = 370;
+          }
+          else{
+            that.windowHeight = 550;
+            that.windowWidth = 320;
+          }
+        });
+      });
+      dispatchEvent(new Event('mouseover'));
     },
   }
 </script>

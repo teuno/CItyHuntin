@@ -16,7 +16,6 @@
         :position="infoWindowPos"
         :opened="infoWinOpen"
         @closeclick="infoWinOpen=false"
-
       >
         <div v-html="infoContent"></div>
       </gmap-info-window>
