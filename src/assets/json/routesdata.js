@@ -1,5 +1,5 @@
 const data = [
-  {image: "static/img/route_1_religious.jpeg", 				name: 'Religious buildings'				, description: 'Time for some peace? There are very beautifull churches to visit. This route is about 2.2km long'},
+  {image: "static/img/route_1_religious.jpeg", 				name: 'Religious buildings'				, description: 'Time for some peace? There are very beautifull churches to visit. This route is about 2.2km long', jsonfile: '../../assets/json/influencial_peopledata'},
   {image: "static/img/route_2_culture.jpeg", 				name: 'Lots of culture'					, description: 'Zwolle is full of culture, dive in! This route is about 1.9km long '},
   {image: "static/img/route_3_outside_of_city_center.jpeg", name: 'More than just the city center'	, description: 'Zwolle is more than a beautiful city center, it has also very nice places just outside the city canal. This route is about 5.4km long'},
   {image: "static/img/route_2_culture.jpeg",						 						name: 'Housing of influential people' 	, description: 'Through the ages Zwolle has housed alot of influential people, lets find out what they did and where they lived! This route is about 1.2km long'},

@@ -1,5 +1,5 @@
 <template>
-  <!--make slider stay in middle but same size-->
+  <!--make slider stay in middle but same size (solve with media query?)-->
   <div class="normalRoute columns is-multiline is-marginless">
 
     <page-title :title="title"></page-title>
@@ -18,16 +18,14 @@
 
 
     <div class="controls">
-      <a v-on:click="left" class="button">
+      <a @click="left" class="button">
         <i class="fa fa-caret-left"></i>
       </a>
-      <button v-on:click="goToMoreRouteInfo" class="button is-rounded">Choose route</button>
-      <a v-on:click="right" class="button">
+      <button @click="goToMoreRouteInfo" class="button is-rounded">Choose route</button>
+      <a @click="right" class="button">
         <i class="fa fa-caret-right"></i>
       </a>
     </div>
-
-
   </div>
 </template>
 
@@ -48,9 +46,6 @@
       }
     },
     methods: {
-      ding: function () {
-        console.log(this.$refs.carousel.currentIndex);
-      },
       left: function () {
         this.$refs.carousel.goPrev();
       },
@@ -59,7 +54,7 @@
       },
       goToMoreRouteInfo: function () {
         let index = this.$refs.carousel.currentIndex;
-        const props = {image: data[index].image, name: data[index].name, description: data[index].description};
+        const props = {image: data[index].image, name: data[index].name, description: data[index].description, jsonfile: data[index].jsonfile};
         this.$router.push({name: 'morerouteinfo', params: props})
       }
     },

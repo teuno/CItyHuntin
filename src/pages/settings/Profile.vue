@@ -1,12 +1,7 @@
 <template>
-  <!--a save button and cancel to go back to previous page-->
   <div class="profile">
-
     <page-title :title="title" :color="'#FFFFFF'"></page-title>
 
-
-    <!--do we want no buttons???
-    doesn't how does the user then know if this gets saved or not?-->
     <section class="section">
       <div class="container">
         <form>
@@ -66,29 +61,21 @@
             </div>
           </div>
 
-          <div class="field is-grouped">
-            <p class="control">
+          <div class="field is-grouped is-grouped-centered">
+            <p @click="save" class="control">
               <a class="button is-link">
-                Save changes
+                Save
               </a>
             </p>
-            <p class="control">
-              <a class="button">
+            <p @click="cancel" class="control">
+              <a  class="button">
                 Cancel
-              </a>
-            </p>
-            <p class="control">
-              <a class="button is-danger">
-                Delete post
               </a>
             </p>
           </div>
         </form>
       </div>
     </section>
-
-
-
 
   </div>
 </template>
@@ -103,7 +90,14 @@
         title: 'Profile'
       }
     },
-    methods: {}
+    methods:{
+      save: function () {
+        console.log("save");
+      },
+      cancel: function () {
+        this.$router.push({name: 'settings'})
+      },
+    }
   }
 </script>
 
@@ -120,6 +114,4 @@
       width: 90%
     }
   }
-
-
 </style>
