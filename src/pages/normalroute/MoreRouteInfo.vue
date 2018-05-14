@@ -1,15 +1,23 @@
 <template>
   <div class="MoreRouteInfo">
 
+
     <div class="container">
       <img :src="image" alt="Norway">
       <div class="center">{{name}}</div>
     </div>
 
-    <label>{{description}}</label>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <label>{{description}}</label>
+        </div>
+      </div>
+    </section>
+
 
     <button @click="goToRouteMapSummary" class="button is-rounded">Start route</button>
-
   </div>
 </template>
 

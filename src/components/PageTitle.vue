@@ -2,7 +2,7 @@
   <section class="hero" :style="{size: this.size}">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title has-text-centered" :style="{color: this.color}">
+          <h1 class="title has-text-centered" :style="{color: this.color}">
           {{title}}
         </h1>
       </div>

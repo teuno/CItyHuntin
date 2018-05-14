@@ -163,6 +163,7 @@
 
 
       //geolocation methods
+
       getLocation: function () {
         console.log("in get Location");
         if (navigator.geolocation) {
@@ -171,6 +172,7 @@
           console.log("Geolocation is not supported by this browser.");
         }
       },
+
       checkLocationSharing: function (position) {
         console.log(position);
         if (position.code === 2) {
@@ -183,6 +185,7 @@
           this.distance_from(position);
         }
       },
+
       distance_from: function (position) {
         console.log(position);
         console.log(position.coords);
@@ -197,21 +200,21 @@
           this.finishable = true;
         }
       },
+
       AllLocationsAreFinised: function () {
         let finished = {status: false}
         finished.status = this.PointsOfInterest.every(x => x.visited === true)
         return finished;
-      }
-    },
+      },
 
-    setCurrentLocation: function () {
-      navigator.geolocation.getCurrentPosition((position, options = this.geoLocationOptions) => {
-        this.currentLocation = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-      });
+      setCurrentLocation: function () {
+        navigator.geolocation.getCurrentPosition((position, options = this.geoLocationOptions) => {
+          this.currentLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+        });
+      },
     },
-
   }
 </script>
