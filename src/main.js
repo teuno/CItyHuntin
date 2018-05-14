@@ -6,6 +6,7 @@ import VueCordova from 'vue-cordova'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import {routes }from './routes'
 import PageTitle from './components/PageTitle.vue'
+import store from './Stores/store';
 Vue.component('page-title', PageTitle);
 
 import RouteMarkerPopup from './components/RouteMarkerPopup.vue'
@@ -14,6 +15,7 @@ Vue.component('RouteMarkerPopup', RouteMarkerPopup);
 
 Vue.use(VueRouter);
 Vue.use(VueCordova);
+
 
 
 Vue.use(VueGoogleMaps, {
@@ -38,6 +40,7 @@ const router = new VueRouter({
 Vue.config.productionTip = false;
 
 new Vue({
+  store,
   router,
   template: `
     <div id="app">

@@ -3,15 +3,15 @@
 
 
     <div class="container">
-      <img :src="image" alt="Norway">
-      <div class="center">{{name}}</div>
+      <img :src="route.image" alt="Norway">
+      <div class="center">{{route.name}}</div>
     </div>
 
 
     <section class="hero">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <label>{{description}}</label>
+          <label>{{route.description}}</label>
         </div>
       </div>
     </section>
@@ -25,23 +25,14 @@
   export default {
     name: 'MoreRouteInfo',
     components: {},
-    props: {
-      image: {
-        type: String,
-        default: ' '
-      },
-      name: {
-        type: String,
-        default: ' '
-      },
-      description: {
-        type: String,
-        default: ' '
-      },
-    },
     methods: {
       goToRouteMapSummary: function () {
         this.$router.push({name: 'normalroutemap'})
+      }
+    },
+    computed: {
+      route() {
+        return this.$store.state.routes.selectedRoute;
       }
     }
   }

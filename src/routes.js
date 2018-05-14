@@ -25,7 +25,7 @@ export const routes = [
   {name: 'moretreasurehuntinfo', path: '/moretreasurehuntinfo', component: MoreTreasureHuntInfo},
 
   {name: 'normalroute', path: '/normalroute', component: NormalRoute},
-  {name: 'morerouteinfo', path: '/morerouteinfo', component: MoreRouteInfo, props: true},
+  {name: 'morerouteinfo', path: '/morerouteinfo', component: MoreRouteInfo},
   {name: 'normalroutemap', path: '/normalroutemap', component: NormalRouteMap},
   {name: 'summaryofroute', path: '/summaryofroute', component: SummaryOfRoute},
 

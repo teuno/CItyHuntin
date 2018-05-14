@@ -18,14 +18,14 @@
     components: {},
     data() {
       return {
-        route: {
-          image: "static/img/route_1_religious.jpeg",
-          name: 'treasure hunt 1',
-          description: 'description of the treasure hunt'
-        }
       }
     },
-    methods: {}
+    methods: {},
+    computed: {
+      route() {
+        return this.$store.state.treasurehunts.selectedHunt;
+      }
+    }
   }</script>
 
 <style lang="scss" scoped>

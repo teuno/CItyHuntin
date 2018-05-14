@@ -3,7 +3,6 @@
 
     <page-title :title="title"></page-title>
 
-
     <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="windowWidth" :height="windowHeight">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure>
@@ -29,7 +28,6 @@
 </template>
 
 <script>
-  import data from '../../assets/json/routesData'
   import {Carousel3d, Slide} from 'vue-carousel-3d';
 
   export default {
@@ -41,7 +39,6 @@
     data() {
       return {
         title: ' Walk the route',
-        routes: data,
         windowHeight: 0,
         windowWidth: 0,
       }
@@ -55,8 +52,8 @@
       },
       goToMoreRouteInfo: function () {
         let index = this.$refs.carousel.currentIndex;
-        const props = {image: data[index].image, name: data[index].name, description: data[index].description, jsonfile: data[index].jsonfile};
-        this.$router.push({name: 'morerouteinfo', params: props})
+        this.$store.commit('selectRoute', index);
+        this.$router.push({name: 'morerouteinfo'})
       }
     },
     mounted() {
@@ -84,6 +81,11 @@
       });
       dispatchEvent(new Event('mouseover'));
     },
+    computed: {
+      routes () {
+        return this.$store.state.routes.routesSummary;
+      }
+    }
   }
 </script>
 

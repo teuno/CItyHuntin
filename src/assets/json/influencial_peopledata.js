@@ -13,7 +13,7 @@ const data = [
     image_url: "",
     position: {lat: 52.514474, lng: 6.098943}
   },
-    {
+  {
     name: "Hof van Ittersum ",
     description: "From the 13th century this place was housed by the highly influencial family van Ittersum. The van Ittersums were in the magistrate of Zwolle and also twice Episcopal steward. On the Facade is the medailion of emperor Carl the V placed. In World War 2 the place was used for the distribution of iligal underground papers",
     date_build: "facade: 1571",
@@ -22,8 +22,8 @@ const data = [
   },
   {
     name: "Birth house of Rheinvis Feith ",
-    description: "Rheinvis Feith was a writer, poet, politician and recipient of convoys and taxes. Rheinvis was member of the patriot party, in 1787 he was chosen to be major of Zwoslle. He died februari the 8th 1824 at the age of 71 and is burried at the 'Algemene Begraafplaats Meppelerstraatweg' ",    
-	date_build: "Born in 1753",
+    description: "Rheinvis Feith was a writer, poet, politician and recipient of convoys and taxes. Rheinvis was member of the patriot party, in 1787 he was chosen to be major of Zwoslle. He died februari the 8th 1824 at the age of 71 and is burried at the 'Algemene Begraafplaats Meppelerstraatweg' ",
+    date_build: "Born in 1753",
     image_url: "",
     position: {lat: 52.510138, lng: 6.093540}
   },
@@ -34,7 +34,7 @@ const data = [
     image_url: "",
     position: {lat: 52.511047, lng: 6.093540}
   },
-	{ 
+  {
     name: "Hof van Suythem ",
     description: "This Place was owned by the influencial family van Suythem since 15th century. In 1557 the place was destroyed and build bigger and stronger by Adolf van Suythem(grandson of Alof van Suythem)",
     date_build: "1557",
@@ -55,17 +55,17 @@ const data = [
     image_url: "",
     position: {lat: 52.511047, lng: 6.091056}
   },
-   {
+  {
     name: "Birth house of Everhardus Potgieter ",
     description: "Everhardus Johannes Potgieter(1808-1875) was a writer and poet and founder of the progresive-liberal magazine 'De Gids'. Everhardus lived her from 1808 til 1821. His father was a cloth merchant who did not make much money, so Everhardus was at the age of 13 send to family in the big city of Amsterdam. ",
     date_build: "Occupied by EJ Potgieter 1808-1821",
     image_url: "",
     position: {lat: 52.511950, lng: 6.091056}
   },
-    {
+  {
     name: "House of admiral Jacob Pieter van Braam ",
     description: "Jacob Pieter van Braam was born in 27 oktober 1737. He started his maritim career as midshipman. He has been enslaved by pirates from 1751-1753. Through alot of promotions he became at may the 10th 1793 Vice-admiral at the admirality of Amsterdam. Jacob died in Zwolle at 16 july 1803",
-	date_build: "Occupied by JP van Braam 1793-1803",
+    date_build: "Occupied by JP van Braam 1793-1803",
     image_url: "",
     position: {lat: 52.512850, lng: 6.089429}
   },

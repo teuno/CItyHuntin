@@ -38,12 +38,6 @@
   export default {
     name: 'NormalRouteMap',
     components: {},
-    props: {
-      jsonfile: {
-        type: String,
-        default: ''
-      },
-    },
     data: function () {
       return {
         activeMarker: '',
@@ -68,7 +62,6 @@
             height: -35
           }
         },
-        PointsOfInterest: data,
 
         //test for geolocation
         currentLocation: {lat: 0, lng: 0},
@@ -216,5 +209,10 @@
         });
       },
     },
+    computed: {
+      PointsOfInterest() {
+        return this.$store.state.routes.selectedRouteData;
+      }
+    }
   }
 </script>
