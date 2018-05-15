@@ -1,4 +1,4 @@
-const routeBasePath = '../assets/json/';
+const routeBasePath = '../assets/json/routes/';
 
 const data = [
   {
@@ -11,13 +11,13 @@ const data = [
     image: "static/img/route_2_culture.jpeg",
     name: 'Lots of culture',
     description: 'Zwolle is full of culture, dive in! This route is about 1.9km long ',
-    jsonfile: routeBasePath+'influencial_peopledata'
+    jsonfile: routeBasePath+'lots_of_culturedata'
   },
   {
     image: "static/img/route_3_outside_of_city_center.jpeg",
     name: 'More than just the city center',
     description: 'Zwolle is more than a beautiful city center, it has also very nice places just outside the city canal. This route is about 5.4km long',
-    jsonfile: routeBasePath+'influencial_peopledata'
+    jsonfile: routeBasePath+'more_then_the_centerdata'
   },
   {
     image: "static/img/route_2_culture.jpeg",
@@ -29,7 +29,13 @@ const data = [
     image: "static/img/route_2_culture.jpeg",
     name: 'Pubcrawl',
     description: 'Nothings shows as much of the city at night as a good old-fashioned pubcrawl. Cheers! This route is about 2km long',
-    jsonfile: routeBasePath+'influencial_peopledata'
+    jsonfile: routeBasePath+'pubcrawldata'
+  },
+  {
+    image: "static/img/hunt_1.jpeg",
+    name: 'Hidden places',
+    description: 'Zwolle has alot almost hidden and unknown points of interest. Want to find out which?',
+    jsonfile: routeBasePath+'hidden_zwolledata'
   }
 ];
 

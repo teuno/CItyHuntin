@@ -16,7 +16,7 @@
         {{description}}
         <br>
         <time datetime="2016-1-1">{{date_build}}</time>
-        <button @click="$emit('getSecondPopUp')">Get second popup</button>
+        <!--<button @click="$emit('getSecondPopUp')">Get second popup</button>-->
       </div>
     </div>
   </div>

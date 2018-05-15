@@ -1,4 +1,4 @@
-const huntBasePath = '../assets/json/';
+const huntBasePath = '../assets/json/hunts';
 
 const data = [
   {

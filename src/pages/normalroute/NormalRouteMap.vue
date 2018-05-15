@@ -17,7 +17,10 @@
         :opened="infoWinOpen"
         @closeclick="infoWinOpen=false"
       >
-        <div v-html="infoContent"></div>
+        <div v-html="infoContent">
+          <!--<RouteMarkerPopup :name="i" :description="i" :date_build="i"></RouteMarkerPopup>-->
+
+        </div>
       </gmap-info-window>
 
       <gmap-marker
@@ -25,7 +28,7 @@
         v-for="(m, index) in PointsOfInterest"
         :position="m.position"
         @click="toggleInfoWindow(m,index)"
-        v-on:getSecondPopUp="getSecondPopUp">
+       >
       </gmap-marker>
     </gmap-map>
   </div>
@@ -90,7 +93,7 @@
         this.infoContent = this.getInfoWindowContent(marker);
 
         //check if its the same marker that was selected if yes toggle
-        if (this.currentMidx == idx) {
+        if (this.currentMidx === idx) {
           this.infoWinOpen = !this.infoWinOpen;
         }
         //if different marker set infowindow to open and reset current marker index
@@ -101,7 +104,6 @@
       },
 
       getInfoWindowContent: function (marker) {
-
         return (`<div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
