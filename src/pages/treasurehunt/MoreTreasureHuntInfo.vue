@@ -8,7 +8,7 @@
 
     <label>{{route.description}}</label>
 
-    <button class="button is-rounded">Start treasure hunt</button>
+    <button class="button is-rounded" @click="goToHuntMapSummary">Start treasure hunt</button>
 
   </div>
 </template>
@@ -20,7 +20,13 @@
       return {
       }
     },
-    methods: {},
+    methods: {
+      goToHuntMapSummary: function () {
+        this.$store.commit('pickHunt');
+        console.log(this.$store.state.treasurehunts.selectedHuntData);
+//        this.$router.push({name: 'normalroutemap'})
+      }
+    },
     computed: {
       route() {
         return this.$store.state.treasurehunts.selectedHunt;

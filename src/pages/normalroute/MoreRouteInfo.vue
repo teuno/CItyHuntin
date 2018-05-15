@@ -27,6 +27,7 @@
     components: {},
     methods: {
       goToRouteMapSummary: function () {
+        this.$store.commit('pickRoute');
         this.$router.push({name: 'normalroutemap'})
       }
     },

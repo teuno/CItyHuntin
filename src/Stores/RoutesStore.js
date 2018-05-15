@@ -17,7 +17,9 @@ const RoutesStore = {
   mutations: {
     selectRoute(state, index) {
       state.selectedRoute = state.routesSummary[index];
-      state.selectedRouteData = routesMap[state.routesSummary[index].jsonfile];
+    },
+    pickRoute(state){
+      state.selectedRouteData = routesMap[state.selectedRoute.jsonfile];
     }
   },
   actions: {},

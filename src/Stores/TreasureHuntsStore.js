@@ -17,7 +17,9 @@ const TreasureHuntsStore = {
   mutations: {
     selectHunt(state, index) {
       state.selectedHunt = state.huntsSummary[index];
-      state.selectedHuntData = routesMap[state.huntsSummary[index].jsonfile];
+    },
+    pickHunt(state){
+      state.selectedHuntData = routesMap[state.selectedHunt.jsonfile];
     }
   },
   actions: {},

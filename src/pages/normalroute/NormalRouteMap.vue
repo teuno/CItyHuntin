@@ -32,9 +32,6 @@
 </template>
 
 <script>
-  import data from '../../assets/json/influencial_peopledata'
-
-
   export default {
     name: 'NormalRouteMap',
     components: {},
