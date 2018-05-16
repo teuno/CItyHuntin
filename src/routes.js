@@ -5,6 +5,7 @@ import SummaryOfRoute from '@/pages/normalroute/SummaryOfRoute'
 import NormalRouteMap from '@/pages/normalroute/NormalRouteMap'
 import TreasureHunt from '@/pages/treasurehunt/TreasureHunt'
 import MoreTreasureHuntInfo from '@/pages/treasurehunt/MoreTreasureHuntInfo'
+import TreasureHuntMap from '@/pages/treasurehunt/TreasureHuntMap'
 import Achievements from '@/pages/Achievements'
 import Settings from '@/pages/settings/Settings'
 import Profile from '@/pages/settings/Profile'
@@ -25,10 +26,14 @@ export const routes = [
 
   {name: 'treasurehunt', path: '/treasurehunt', component: TreasureHunt},
   {name: 'moretreasurehuntinfo', path: '/moretreasurehuntinfo', component: MoreTreasureHuntInfo},
+  {name: 'treasurehuntmap', path: '/treasurehuntmap', component: TreasureHuntMap},
+
+
 
   {name: 'normalroute', path: '/normalroute', component: NormalRoute},
   {name: 'morerouteinfo', path: '/morerouteinfo', component: MoreRouteInfo},
   {name: 'normalroutemap', path: '/normalroutemap', component: NormalRouteMap},
+  {name: 'routePoI', path: '/routePoI', component: RoutePoI},
   {name: 'summaryofroute', path: '/summaryofroute', component: SummaryOfRoute},
 
   {name: 'achievements', path: '/achievements', component: Achievements},
@@ -39,7 +44,7 @@ export const routes = [
   {name: 'termsAndConditions', path: '/termsAndConditions', component: TermsAndConditions},
 
 
-  {name: 'routePoI', path: '/routePoI', component: RoutePoI},
+
 
 
 ];

@@ -2,7 +2,7 @@
   <div class="MoreRouteInfo">
 
 
-    <div class="container" @click="goToRouteMapSummary">
+    <div class="container" @click="goToTreasureHuntMapSummary">
       <img :src="route.image" alt="Norway">
       <div class="center">{{route.name}}</div>
     </div>
@@ -17,7 +17,7 @@
     </section>
 
 
-    <button @click="goToRouteMapSummary" class="button is-rounded">Start route</button>
+    <button @click="goToTreasureHuntMapSummary" class="button is-rounded">Start route</button>
   </div>
 </template>
 
@@ -26,14 +26,14 @@
     name: 'MoreRouteInfo',
     components: {},
     methods: {
-      goToRouteMapSummary: function () {
+      goToTreasureHuntMapSummary: function () {
         this.$store.commit('pickRoute');
-        this.$router.push({name: 'normalroutemap'})
+        this.$router.push({name: 'treasurehuntmap'})
       }
     },
     computed: {
       route() {
-        return this.$store.state.routes.selectedRoute;
+        return this.$store.state.selectedRoute;
       }
     }
   }

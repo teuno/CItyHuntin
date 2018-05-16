@@ -9,9 +9,6 @@ import PageTitle from './components/PageTitle.vue'
 import store from './Stores/store';
 Vue.component('page-title', PageTitle);
 
-import RouteMarkerPopup from './components/RouteMarkerPopup.vue'
-Vue.component('RouteMarkerPopup', RouteMarkerPopup);
-
 
 Vue.use(VueRouter);
 Vue.use(VueCordova);

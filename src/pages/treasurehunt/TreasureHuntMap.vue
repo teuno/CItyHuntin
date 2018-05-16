@@ -4,7 +4,7 @@
     <!--<label>{{text}}</label>-->
     <!--<button v-if="routeFinishable" @click="completeRoute">Complete the route</button>-->
 
-
+hunt
     <gmap-map
       ref="gmap"
       :center="center"
@@ -12,14 +12,6 @@
       style="width:100%;  height: 100vh;"
     >
 
-      <gmap-info-window
-        :options="infoOptions"
-        :position="infoWindowPos"
-        :opened="infoWinOpen"
-        @closeclick="infoWinOpen=false"
-      >
-      >
-      </gmap-info-window>
 
       <gmap-marker
         :key="index"
@@ -43,7 +35,7 @@
 
 <script>
   export default {
-    name: 'NormalRouteMap',
+    name: 'TreasureHuntMap',
     components: {},
     data: function () {
       return {
@@ -157,7 +149,7 @@
     },
     computed: {
       PointsOfInterest() {
-        return this.$store.state.routes.selectedRouteData;
+        return this.$store.state.treasurehunts.selectedHuntData;
       }
     }
   }

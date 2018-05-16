@@ -1,11 +1,10 @@
 import data from '../assets/json/hunts/treasurehuntsdata'
-import religious_buildings from '../assets/json/routes/religious_buildingsdata'
-import influencial_people from '../assets/json/routes/influencial_peopledata'
+import treasure_hunt1 from '../assets/json/hunts/treasurehunt_1_data'
+
 
 
 const routesMap = {
-  // '../assets/json/religious_buildingsdata': religious_buildings,
-  // '../assets/json/influencial_peopledata': influencial_people,
+  '../assets/json/hunts/treasurehunt_1_data': treasure_hunt1,
 }
 
 const TreasureHuntsStore = {
@@ -20,6 +19,16 @@ const TreasureHuntsStore = {
     },
     pickHunt(state){
       state.selectedHuntData = routesMap[state.selectedHunt.jsonfile];
+      state.selectedHuntData.map(x => {
+        x.visited = false;
+        return x;
+      });
+    },
+    visitPoI(state, index){
+      state.selectedHuntData[index].visited = true;
+    },
+    selectPoI(state, index){
+      state.selectedPoI = state.selectedHuntData[index];
     }
   },
   actions: {},

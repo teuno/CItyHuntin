@@ -1,11 +1,11 @@
-const huntBasePath = '../assets/json/hunts';
+const huntBasePath = '../assets/json/hunts/';
 
 const data = [
   {
     image: "static/img/hunt_1.jpeg",
     name: 'TЯÆSUЯE HUИT 1',
     description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 2.2km long',
-    jsonfile: huntBasePath+'religious_buildingsdata'
+    jsonfile: huntBasePath+'treasurehunt_1_data'
   },
   {
     image: "static/img/hunt_2.jpeg",

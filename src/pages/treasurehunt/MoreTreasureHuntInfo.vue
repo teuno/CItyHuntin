@@ -1,7 +1,7 @@
 <template>
   <div class="MoreRouteInfo">
 
-    <div class="container">
+    <div class="container" @click="goToHuntMapSummary">
       <img :src="route.image" alt="Norway">
       <div class="center">{{route.name}}</div>
     </div>
@@ -24,7 +24,7 @@
       goToHuntMapSummary: function () {
         this.$store.commit('pickHunt');
         console.log(this.$store.state.treasurehunts.selectedHuntData);
-//        this.$router.push({name: 'normalroutemap'})
+        this.$router.push({name: 'treasurehuntmap'})
       }
     },
     computed: {

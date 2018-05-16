@@ -3,12 +3,11 @@
 
     <page-title :title="title"></page-title>
 
-
     <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="windowWidth"
                  :height="windowHeight">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
-        <figure @click="printDing(route.name)">
-          <div class="container">
+        <figure>
+          <div class="container" @click="goToTreasureHuntSummary">
             <img :src="route.image">
             <div class="center">{{route.name}}</div>
           </div>
@@ -17,10 +16,10 @@
     </carousel-3d>
 
     <div class="controls">
-      <a v-on:click="left" class="button">
+      <a @click="left" class="button">
         <i class="fa fa-caret-left"></i>
       </a>
-      <button v-on:click="goToTreasureHuntSummary" class="button is-rounded">Choose treasure hunt</button>
+      <button @click="goToTreasureHuntSummary" class="button is-rounded">Choose treasure hunt</button>
       <a v-on:click="right" class="button">
         <i class="fa fa-caret-right"></i>
       </a>
@@ -63,27 +62,23 @@
     mounted() {
       let that = this;
       this.$nextTick(function () {
-        window.addEventListener('mouseover', function (e) {
-//          console.log("width: "+ window.innerWidth+" height: "+ window.innerHeight);
-          if (window.innerHeight < 660) {
-            that.windowHeight = 320;
-            that.windowWidth = 300;
-          }
-          else if (window.innerHeight < 760) {
-            that.windowHeight = 400;
-            that.windowWidth = 330;
-          }
-          else if (window.innerHeight < 860) {
-            that.windowHeight = 450;
-            that.windowWidth = 370;
-          }
-          else {
-            that.windowHeight = 550;
-            that.windowWidth = 320;
-          }
-        });
+        if (window.innerHeight < 660) {
+          that.windowHeight = 320;
+          that.windowWidth = 300;
+        }
+        else if (window.innerHeight < 760) {
+          that.windowHeight = 400;
+          that.windowWidth = 330;
+        }
+        else if (window.innerHeight < 860) {
+          that.windowHeight = 450;
+          that.windowWidth = 370;
+        }
+        else {
+          that.windowHeight = 550;
+          that.windowWidth = 320;
+        }
       });
-      dispatchEvent(new Event('mouseover'));
     },
     computed: {
       routes() {
