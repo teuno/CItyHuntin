@@ -11,6 +11,8 @@ import Profile from '@/pages/settings/Profile'
 import Language from '@/pages/settings/Language'
 import TermsAndConditions from '@/pages/settings/TermsAndConditions'
 
+import RoutePoI from '@/pages/normalroute/RoutePoI'
+
 
 export const routes = [
   {
@@ -35,4 +37,9 @@ export const routes = [
   {name: 'profile', path: '/profile', component: Profile},
   {name: 'language', path: '/language', component: Language},
   {name: 'termsAndConditions', path: '/termsAndConditions', component: TermsAndConditions},
+
+
+  {name: 'routePoI', path: '/routePoI', component: RoutePoI},
+
+
 ];

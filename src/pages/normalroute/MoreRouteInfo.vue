@@ -2,7 +2,7 @@
   <div class="MoreRouteInfo">
 
 
-    <div class="container">
+    <div class="container" @click="goToRouteMapSummary">
       <img :src="route.image" alt="Norway">
       <div class="center">{{route.name}}</div>
     </div>

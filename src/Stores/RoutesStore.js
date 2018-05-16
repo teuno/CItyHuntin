@@ -21,13 +21,24 @@ const RoutesStore = {
     routesSummary: data,
     selectedRoute: {},
     selectedRouteData: [],
+    selectedPoI: {},
   },
   mutations: {
     selectRoute(state, index) {
       state.selectedRoute = state.routesSummary[index];
     },
     pickRoute(state){
-      state.selectedRouteData = routesMap[state.selectedRoute.jsonfile];
+        state.selectedRouteData = routesMap[state.selectedRoute.jsonfile];
+        state.selectedRouteData.map(x => {
+          x.visited = false;
+          return x;
+        });
+    },
+    visitPoI(state, index){
+      state.selectedRouteData[index].visited = true;
+    },
+    selectPoI(state, index){
+      state.selectedPoI = state.selectedRouteData[index];
     }
   },
   actions: {},

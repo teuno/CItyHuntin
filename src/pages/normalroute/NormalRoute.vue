@@ -6,7 +6,7 @@
     <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="windowWidth" :height="windowHeight">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure>
-          <div class="container">
+          <div class="container" @click="goToMoreRouteInfo">
             <img :src="route.image">
             <div class="center">{{route.name}}</div>
           </div>
@@ -59,8 +59,6 @@
     mounted() {
       let that = this;
       this.$nextTick(function() {
-        window.addEventListener('mouseover', function(e) {
-//          console.log("width: "+ window.innerWidth+" height: "+ window.innerHeight);
           if(window.innerHeight < 660){
             that.windowHeight = 320;
             that.windowWidth = 300;
@@ -77,9 +75,7 @@
             that.windowHeight = 550;
             that.windowWidth = 320;
           }
-        });
       });
-      dispatchEvent(new Event('mouseover'));
     },
     computed: {
       routes () {
