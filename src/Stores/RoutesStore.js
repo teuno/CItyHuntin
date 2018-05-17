@@ -34,10 +34,10 @@ const RoutesStore = {
           return x;
         });
     },
-    visitPoI(state, index){
+    visitPoIRoute(state, index){
       state.selectedRouteData[index].visited = true;
     },
-    selectPoI(state, index){
+    selectPoIRoute(state, index){
       state.selectedPoI = state.selectedRouteData[index];
     }
   },

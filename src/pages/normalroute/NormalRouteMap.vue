@@ -53,8 +53,8 @@
         this.$router.push({name: 'summaryofroute'})
       },
       goToPoI(index) {
-        this.$store.commit('selectPoI', index);
-        this.$store.commit('visitPoI', index);
+        this.$store.commit('selectPoIRoute', index);
+        this.$store.commit('visitPoIRoute', index);
         this.$router.push({name: 'routePoI'});
       },
     },

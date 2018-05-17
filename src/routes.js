@@ -13,6 +13,9 @@ import Language from '@/pages/settings/Language'
 import TermsAndConditions from '@/pages/settings/TermsAndConditions'
 
 import RoutePoI from '@/pages/normalroute/RoutePoI'
+import HuntPoI from '@/pages/treasurehunt/HuntPoI'
+import SummaryOfTreasureHunt from '@/pages/treasurehunt/SummaryOfTreasureHunt'
+
 
 
 export const routes = [
@@ -27,7 +30,9 @@ export const routes = [
   {name: 'treasurehunt', path: '/treasurehunt', component: TreasureHunt},
   {name: 'moretreasurehuntinfo', path: '/moretreasurehuntinfo', component: MoreTreasureHuntInfo},
   {name: 'treasurehuntmap', path: '/treasurehuntmap', component: TreasureHuntMap},
+  {name: 'huntPoI', path: '/huntPoI', component: HuntPoI},
 
+  {name: 'summaryoftreasurehunt', path: '/summaryoftreasurehunt', component: SummaryOfTreasureHunt},
 
 
   {name: 'normalroute', path: '/normalroute', component: NormalRoute},

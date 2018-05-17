@@ -25,7 +25,7 @@ hunt
     <section class="hero is-small is-column-centered">
       <div class="hero-body">
         <div class="container">
-          <a @click="completeRoute" class="button is-success is-rounded">Complete the route</a>
+          <a @click="completeHunt" class="button is-success is-rounded">Complete the treasure hunt</a>
         </div>
       </div>
     </section>
@@ -74,8 +74,8 @@ hunt
       this.AllLocationsAreFinished();
     },
     methods: {
-      completeRoute() {
-        this.$router.push({name: 'summaryofroute'})
+      completeHunt() {
+        this.$router.push({name: 'summaryoftreasurehunt'})
       },
       goToPoI(index) {
         //when we will check the location to see if you are allowed to view the route we need to use this.
@@ -84,14 +84,14 @@ hunt
 //        setTimeout(() => this.$store.commit('visitPoI', idx),3000);
 //        setTimeout(() => console.log(this.PointsOfInterest[idx]),3000);
 
-        this.$store.commit('selectPoI', index);
+        this.$store.commit('selectPoIHunt', index);
 
 
         if (this.currentLocation === this.currentLocation) {//this.$store.state.routes.selectedPoI.location){
-          console.log("hoi")
-          this.$store.commit('visitPoI', index)
+          console.log("hoi");
+          this.$store.commit('visitPoIHunt', index)
 
-          this.$router.push({name: 'routePoI'})
+          this.$router.push({name: 'huntPoI'})
         }
       },
 

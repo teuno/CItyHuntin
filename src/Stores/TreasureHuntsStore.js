@@ -12,6 +12,7 @@ const TreasureHuntsStore = {
     huntsSummary: data,
     selectedHunt: {},
     selectedHuntData: [],
+    selectedPoI: {},
   },
   mutations: {
     selectHunt(state, index) {
@@ -24,10 +25,10 @@ const TreasureHuntsStore = {
         return x;
       });
     },
-    visitPoI(state, index){
+    visitPoIHunt(state, index){
       state.selectedHuntData[index].visited = true;
     },
-    selectPoI(state, index){
+    selectPoIHunt(state, index){
       state.selectedPoI = state.selectedHuntData[index];
     }
   },

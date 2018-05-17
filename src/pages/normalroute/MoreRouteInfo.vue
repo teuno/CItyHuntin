@@ -28,12 +28,12 @@
     methods: {
       goToTreasureHuntMapSummary: function () {
         this.$store.commit('pickRoute');
-        this.$router.push({name: 'treasurehuntmap'})
+        this.$router.push({name: 'normalroutemap'})
       }
     },
     computed: {
       route() {
-        return this.$store.state.selectedRoute;
+        return this.$store.state.routes.selectedRoute;
       }
     }
   }
