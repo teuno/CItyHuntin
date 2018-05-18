@@ -57,6 +57,7 @@
       }
     },
     mounted() {
+      this.$refs.carousel.currentIndex = this.$store.state.routes.selectedRouteIndex;
       let that = this;
       this.$nextTick(function() {
           if(window.innerHeight < 660){

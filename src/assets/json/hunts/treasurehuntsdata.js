@@ -11,13 +11,13 @@ const data = [
     image: "static/img/hunt_2.jpeg",
     name: 'Treasure Hunt 2',
     description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 2.3km long',
-    jsonfile: huntBasePath+'influencial_peopledata'
+    jsonfile: huntBasePath+'treasurehunt_2_data'
   },
   {
     image: "static/img/hunt_3.jpeg",
-    name: 'Treaure Hunt 3',
+    name: 'Treasure Hunt 3',
     description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 3.3km long',
-    jsonfile: huntBasePath+'religious_buildingsdata'
+    jsonfile: huntBasePath+'treasurehunt_3_data'
   }
 ];
 

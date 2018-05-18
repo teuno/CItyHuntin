@@ -8,7 +8,6 @@
             <div class="tile is-vertical is-parent">
 
               <div class="tile is-child box">
-                <!--<img src="https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_1280.jpg">-->
                 <img :src="PoI.image_url">
               </div>
 

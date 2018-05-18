@@ -49,9 +49,6 @@
         this.$store.commit('selectHunt', index);
         this.$router.push({name: 'moretreasurehuntinfo'})
       },
-      printDing: function (name) {
-        console.log(name);
-      },
       left: function () {
         this.$refs.carousel.goPrev();
       },
@@ -60,6 +57,7 @@
       }
     },
     mounted() {
+      this.$refs.carousel.currentIndex = this.$store.state.treasurehunts.selectedHuntIndex;
       let that = this;
       this.$nextTick(function () {
         if (window.innerHeight < 660) {

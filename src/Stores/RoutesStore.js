@@ -22,9 +22,11 @@ const RoutesStore = {
     selectedRoute: {},
     selectedRouteData: [],
     selectedPoI: {},
+    selectedRouteIndex: 0,
   },
   mutations: {
     selectRoute(state, index) {
+      state.selectedRouteIndex = index;
       state.selectedRoute = state.routesSummary[index];
     },
     pickRoute(state){

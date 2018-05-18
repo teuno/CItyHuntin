@@ -3,25 +3,25 @@
     <div v-on:click="toTreasureHunt" class="column is-paddingless is-12 is-incenter treasureHunt">
       <div class="is-incenter is-half">
         <i class="far fa-map"></i>
-        <h1>Treasure hunt</h1>
+        <h1>Treasure hunts</h1>
       </div>
     </div>
     <div v-on:click="toNormalRoute" class="column is-paddingless is-12 is-incenter normalRoute">
       <div class="is-incenter is-half">
         <i class="fas fa-map-marker-alt"></i>
-        <h1>normalroute</h1>
+        <h1>Walk the route</h1>
       </div>
     </div>
     <div v-on:click="toAchievements" class="column is-paddingless is-12 is-incenter achievements">
       <div class="is-incenter is-half">
         <i class="fas fa-lock"></i>
-        <h1>achievements</h1>
+        <h1>Achievements</h1>
       </div>
     </div>
     <div v-on:click="toSettings" class="column is-paddingless is-12 is-incenter settings">
       <div class="is-incenter is-half">
         <i class="fas fa-sliders-h"></i>
-        <h1>settings</h1>
+        <h1>Settings</h1>
       </div>
     </div>
   </div>
