@@ -10,7 +10,7 @@ const data = [
     name: "Museum De Fundatie",
     description: "Museum de Fundatie, former Palace of Justice was built in the neo-classicist style between 1838 and 1841, is a museum for the visual arts. The court building was completely revamped during the nineteen eighties to serve as the new office for the national planning service’s information department. Second renovation in 1994 saw the palace become a fully fledged museum. It possesses a collection of visual arts, with works ranging from the end of the Middle Ages until the present day. Among these works are paintings of Marc Chagall, Piet Mondrian, Isaac Israëls, Vincent van Gogh, Lucebert, Paul Citroen, Karel Appel, and Carel Willink, and sculptures by Antonio Canova and Gian Lorenzo Bernini.",
     date_build: "",
-    image_url: "",
+    image_url: "static/img/PoIs/museum-Fundation-old-palace-of-justice.jpg",
     position: {lat: 52.510177, lng: 6.091430}
   },
   {
@@ -52,7 +52,7 @@ const data = [
     name: "Citywall",
     description: "The beautifull city wall of Zwolle was builed as a defence for the city against sieges and canonfire. The wall had 23 towers of which there remain only 3 nowadays. It also had multiple ports of which the Sassenpoort is the only one remaining. From the Diezestraat to the Rodetorenplein there are still some nice pieces of the wall and it's towers viseble.",
     date_build: "1400",
-    image_url: "",
+    image_url: "static/img/PoIs/city-wall.jpg",
     position: {lat: 52.514166 , lng: 6.097567 }
   },
   {

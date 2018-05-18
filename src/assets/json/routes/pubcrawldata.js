@@ -10,7 +10,7 @@ const data = [
     name: "Café 't Beugeltje",
     description: "In this bar you litterly feel history, the only bar located in old defense tower, and looks clearly old. The bar is populair for servering Grolsch Bracketbottels. ",
     date_build: "tower(1475), bar(2003)",
-    image_url: "",
+    image_url: "static/img/PoIs/Wine-Carriers-tower.jpg",
     position: {lat: 52.514118 , lng: 6.093819}
   },
   {

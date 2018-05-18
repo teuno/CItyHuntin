@@ -14,6 +14,7 @@ import TermsAndConditions from '@/pages/settings/TermsAndConditions'
 
 import RoutePoI from '@/pages/normalroute/RoutePoI'
 import HuntPoI from '@/pages/treasurehunt/HuntPoI'
+import HuntQuestion from '@/pages/treasurehunt/HuntQuestion'
 import SummaryOfTreasureHunt from '@/pages/treasurehunt/SummaryOfTreasureHunt'
 
 
@@ -31,7 +32,7 @@ export const routes = [
   {name: 'moretreasurehuntinfo', path: '/moretreasurehuntinfo', component: MoreTreasureHuntInfo},
   {name: 'treasurehuntmap', path: '/treasurehuntmap', component: TreasureHuntMap},
   {name: 'huntPoI', path: '/huntPoI', component: HuntPoI},
-
+  {name: 'huntquestion', path: '/huntquestion', component: HuntQuestion},
   {name: 'summaryoftreasurehunt', path: '/summaryoftreasurehunt', component: SummaryOfTreasureHunt},
 
 
@@ -47,9 +48,4 @@ export const routes = [
   {name: 'profile', path: '/profile', component: Profile},
   {name: 'language', path: '/language', component: Language},
   {name: 'termsAndConditions', path: '/termsAndConditions', component: TermsAndConditions},
-
-
-
-
-
 ];

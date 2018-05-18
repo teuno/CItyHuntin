@@ -4,7 +4,7 @@
 
     <div class="my-content">
       <div>
-        <p class="is-size-5 has-text-weight-bold">Name of the treasure hunt</p>
+        <p class="is-size-5 has-text-weight-bold">Name of the hunt</p>
         <p class="is-size-7 has-text-weight-light">{{name}}</p>
       </div>
 
@@ -19,7 +19,15 @@
       </div>
 
       <div>
-        <p class="is-size-5 has-text-weight-bold">Did you like this treasure hunt? Then rate us!</p>
+        <p class="is-size-5 has-text-weight-bold">Achievements unlocked</p>
+        <ul>
+          <li class="is-size-7 has-text-weight-light">Achievement #1</li>
+          <li class="is-size-7 has-text-weight-light">Achievement #3</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="is-size-5 has-text-weight-bold">Did you like this hunt? Then rate us!</p>
         <star-rating
           @rating-selected="setRating"
           v-model="rating"
@@ -50,7 +58,7 @@
     },
     data() {
       return {
-        title: 'Summary of the route',
+        title: 'Summary of the hunt',
         name: 'Culture & Architecture',
         distance: 250,//meters
         time: 208, //minutes

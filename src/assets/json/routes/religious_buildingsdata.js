@@ -10,7 +10,7 @@ const data = [
     name: "Emmanuelshuizen",
     description: "Anna van Haerst was married to Emmanuel van Twenhuysen, a doctor in law. After he and their son died on black death, she had no heirs. So she decided to create a place for 9 elderly Catholic women to live in, she named the place after her husband. The houses continued till early 1900, now a days, there are some art galeries.",
     date_build: "founded in 1639",
-    image_url: "",
+    image_url: "static/img/PoIs/Emanuels-houses.jpg",
     position: {lat: 52.510629, lng: 6.092635}
   },
   {
@@ -38,7 +38,7 @@ const data = [
     name: "Christian Coffehouse De Fuik",
     description: "In the sixties the former kindergarten was converted into a Christian coffeebar called De Fuik. De Fuik has as main goal: personal and informal contact between young christians. The Fuik was owned by the 'Vrije Evengalisatie Zwolle' till they sold it at the 29th of may 2015",
     date_build: "coffee house opend in the sixties",
-    image_url: "",
+    image_url: "static/img/PoIs/Christian -coffeehouse-the-Fuik.jpg",
     position: {lat: 52.513819, lng: 6.092715}
   },
   {
@@ -59,7 +59,7 @@ const data = [
     name: "Lutherse kerk",
     description: "Lutheristic church. The Lutheranism is the oldest protestants religion in Zwolle. About 1519 Zwolle was well-known as the first large protestant radiance centre in the Netherlands, because of the famous Latin school in Zwolle. In that time, the school was on her climax. It is special that many books of Luther were printed and spread here. German merchants, who came to Zwolle, came secretly together in “huisgemeenten”.  These have grown to one Lutheran community.",
     date_build: "1649(huge restauration in 1967)",
-    image_url: "",
+    image_url: "static/img/PoIs/Luthers-church.jpg",
     position: {lat: 52.510165, lng: 6.091950}
   },
   {
@@ -73,7 +73,7 @@ const data = [
     name: "Plantage kerk",
     description: "Plantagekerk is a reformed church building with a sexton's house built on the left, designed in the years 1874-1875. Remarkably located on the southeastern edge of the old town, reformed church is built in an eclectic design language, using neo-Romanesque, neo-Gothic and neo-Renaissance motifs. Church building on T-shaped floor plan, built from brown-red brick and covered by two perpendicular to each other with slate covered saddle roofs with two dormer windows at the front and rear. The interior is covered by a ceiling divided into 24 compartments; the twelve middle sections are deepened and have wooden beams with neo-Gothic four-sided treads and carved wooden sagging bricks; the construction rests on cut sides on cut wooden consoles.",
     date_build: "1874",
-    image_url: "",
+    image_url: "static/img/PoIs/Plantage-church.jpg",
     position: {lat: 52.512440, lng: 6.098171}
   },
 

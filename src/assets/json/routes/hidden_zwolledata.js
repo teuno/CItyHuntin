@@ -24,7 +24,7 @@ const data = [
     name: "Groote Sociciteit",
     description: "In 1648 the building was a house of the family Haersolte. In 1805 the building was bought by The Grote Sociciteit. A men's club for men who were in the upper class of socitiy. Today it's still a closed club for notable men. ",
     date_build: "1648(house), 1805(Sociciteit)",
-    image_url: "",
+    image_url: "static/img/PoIs/The-big-S.jpg",
     position: {lat: 52.510072, lng: 6.092523}
   },
   {

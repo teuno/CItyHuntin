@@ -5,31 +5,23 @@
         <div class="tile is-ancestor">
           <div class="tile is-vertical is-parent">
 
+            <div class="tile is-child box">
+              <img :src="PoI.image_url">
+            </div>
 
             <div class="tile is-child box">
-              <img src="https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_1280.jpg">
-            </div>
-
-            <div class="tile is-child box">
-              <h1>{{PoI.name}}</h1>
+              <h1>{{PoI.challengeTitle}}</h1>
             </div>
 
 
 
             <div class="tile is-child box">
-              <p>{{PoI.description}}</p>
+              <p>{{PoI.challengeQuestion}}</p>
             </div>
-
-
-            <div @click="toQuestion" class="tile is-child has-text-centered">
-              <a class="button is-success is-rounded">To question</a>
-            </div>
-
 
             <div @click="backToRoute" class="tile is-child has-text-centered">
-              <a class="button is-success is-rounded">Back to treasure hunt</a>
+              <a class="button is-success is-rounded">Challenge complete</a> <!--what to do with errors-->
             </div>
-
 
           </div>
         </div>
@@ -48,9 +40,6 @@
       backToRoute() {
         console.log(this.$store.state.treasurehunts.selectedPoI);
         this.$router.push({name: 'treasurehuntmap'})
-      },
-      toQuestion(){
-        this.$router.push({name: 'huntquestion'})
       }
     },
     computed: {
