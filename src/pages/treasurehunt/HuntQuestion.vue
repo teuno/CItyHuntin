@@ -38,8 +38,8 @@
     components: {},
     methods: {
       backToRoute() {
-        console.log(this.$store.state.treasurehunts.selectedPoI);
-        this.$router.push({name: 'treasurehuntmap'})
+        this.$store.commit('completePoIHunt');
+        this.$router.go(-2);
       }
     },
     computed: {

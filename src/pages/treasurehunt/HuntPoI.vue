@@ -47,7 +47,7 @@
     methods: {
       backToRoute() {
         console.log(this.$store.state.treasurehunts.selectedPoI);
-        this.$router.push({name: 'treasurehuntmap'})
+        this.$router.go(-1);
       },
       toQuestion(){
         this.$router.push({name: 'huntquestion'})

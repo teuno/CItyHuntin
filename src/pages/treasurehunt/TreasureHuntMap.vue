@@ -4,7 +4,9 @@
     <!--<label>{{text}}</label>-->
     <!--<button v-if="routeFinishable" @click="completeRoute">Complete the route</button>-->
 
-hunt
+
+    <h1 v-if="this.$store.state.treasurehunts.answeredQuestion">{{$store.state.treasurehunts.selectedPoI.challengeCompleteHint}}</h1>
+
     <gmap-map
       ref="gmap"
       :center="center"
@@ -72,6 +74,7 @@ hunt
         map.fitBounds(bounds);
       });
       this.AllLocationsAreFinished();
+      console.log(this.$store.state.treasurehunts.answeredQuestion);
     },
     methods: {
       completeHunt() {
@@ -88,13 +91,10 @@ hunt
 
 
         if (this.currentLocation === this.currentLocation) {//this.$store.state.routes.selectedPoI.location){
-          console.log("hoi");
           this.$store.commit('visitPoIHunt', index)
-
           this.$router.push({name: 'huntPoI'})
         }
       },
-
 
       //geolocation methods
 
@@ -149,6 +149,7 @@ hunt
     },
     computed: {
       PointsOfInterest() {
+//        console.log(this.$store.state.treasurehunts.selectedPoI);
         return this.$store.state.treasurehunts.selectedHuntData;
       }
     }

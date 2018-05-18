@@ -17,6 +17,7 @@ const TreasureHuntsStore = {
     selectedHuntData: [],
     selectedPoI: {},
     selectedHuntIndex: 0,
+    answeredQuestion: false,
   },
   mutations: {
     selectHunt(state, index) {
@@ -35,7 +36,10 @@ const TreasureHuntsStore = {
     },
     selectPoIHunt(state, index) {
       state.selectedPoI = state.selectedHuntData[index];
-    }
+    },
+    completePoIHunt(state){
+      state.answeredQuestion = true;
+    },
   },
   actions: {},
   getters: {}

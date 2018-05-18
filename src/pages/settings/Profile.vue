@@ -95,7 +95,7 @@
         console.log("save");
       },
       cancel: function () {
-        this.$router.push({name: 'settings'})
+        this.$router.go(-1);
       },
     }
   }

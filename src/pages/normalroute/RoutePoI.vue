@@ -41,7 +41,7 @@
     methods: {
       backToRoute() {
         console.log(this.$store.state.routes.selectedPoI);
-        this.$router.push({name: 'normalroutemap'})
+        this.$router.go(-1);
       }
     },
     computed: {
