@@ -83,15 +83,16 @@
       goToPoI(index) {
         //when we will check the location to see if you are allowed to view the route we need to use this.
         this.setCurrentLocation();
-//        console.log(this.currentLocation);
 //        setTimeout(() => this.$store.commit('visitPoI', idx),3000);
 //        setTimeout(() => console.log(this.PointsOfInterest[idx]),3000);
 
         this.$store.commit('selectPoIHunt', index);
 
-
-        if (this.currentLocation === this.currentLocation) {//this.$store.state.routes.selectedPoI.location){
-          this.$store.commit('visitPoIHunt', index)
+        if(this.$store.state.treasurehunts.selectedPoI.position.lat === this.$store.state.treasurehunts.selectedPoI.position.lat){
+//        if (this.currentLocation.lat === this.$store.state.treasurehunts.selectedPoI.position.lat &&
+//          this.currentLocation.lng === this.$store.state.treasurehunts.selectedPoI.position.lng
+//        ) {
+          this.$store.commit('visitPoIHunt', index);
           this.$router.push({name: 'huntPoI'})
         }
       },
@@ -140,6 +141,7 @@
 
       setCurrentLocation: function () {
         navigator.geolocation.getCurrentPosition((position, options = this.geoLocationOptions) => {
+
           this.currentLocation = {
             lat: position.coords.latitude,
             lng: position.coords.longitude

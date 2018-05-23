@@ -25,6 +25,7 @@ const TreasureHuntsStore = {
       state.selectedHunt = state.huntsSummary[index];
     },
     pickHunt(state) {
+      state.answeredQuestion = false;
       state.selectedHuntData = routesMap[state.selectedHunt.jsonfile];
       state.selectedHuntData.map(x => {
         x.visited = false;
