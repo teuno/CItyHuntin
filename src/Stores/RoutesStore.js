@@ -5,6 +5,7 @@ import hidden_zwolle from '../assets/json/routes/hidden_zwolledata'
 import pubcrawl from '../assets/json/routes/pubcrawldata'
 import more_then_the_center from '../assets/json/routes/more_then_the_centerdata'
 import lots_of_culture from '../assets/json/routes/lots_of_culturedata'
+import campus from '../assets/json/routes/Campus_route'
 
 
 const routesMap = {
@@ -14,6 +15,7 @@ const routesMap = {
   '../assets/json/routes/pubcrawldata': pubcrawl,
   '../assets/json/routes/more_then_the_centerdata': more_then_the_center,
   '../assets/json/routes/lots_of_culturedata': lots_of_culture,
+  '../assets/json/routes/campus_routedata': campus
 }
 
 const RoutesStore = {

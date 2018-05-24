@@ -45,7 +45,7 @@ const data = [
     name: "House of Anna van Haerst ",
     description: "Anna van Haerst was married to Emmanuel van Twenhuysen, a doctor in law. After he and their son died on black death, she had no heirs. So she decided to create a place for 9 elderly Catholic women to live in,  she named the place after her husband. The houses continued till early 1900, now a days, there are some art galeries. ",
     date_build: "Used as womenhouse since 1639",
-    image_url: "static/img/PoIs/emmanuels-houses.jpg",
+    image_url: "static/img/PoIs/emanuels-houses.jpg",
     position: {lat: 52.510629, lng: 6.092635}
   },
   {

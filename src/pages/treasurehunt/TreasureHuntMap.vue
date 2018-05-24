@@ -5,7 +5,8 @@
     <!--<button v-if="routeFinishable" @click="completeRoute">Complete the route</button>-->
 
 
-    <h1 v-if="this.$store.state.treasurehunts.answeredQuestion">{{$store.state.treasurehunts.selectedPoI.challengeCompleteHint}}</h1>
+    <h1 v-if="this.$store.state.treasurehunts.answeredQuestion">
+      {{$store.state.treasurehunts.selectedPoI.challengeCompleteHint}}</h1>
 
     <gmap-map
       ref="gmap"
@@ -24,7 +25,7 @@
       </gmap-marker>
     </gmap-map>
 
-    <section class="hero is-small is-column-centered">
+    <section v-if="routeFinishable" class="hero is-small is-column-centered">
       <div class="hero-body">
         <div class="container">
           <a @click="completeHunt" class="button is-success is-rounded">Complete the treasure hunt</a>
@@ -74,7 +75,6 @@
         map.fitBounds(bounds);
       });
       this.AllLocationsAreFinished();
-      console.log(this.$store.state.treasurehunts.answeredQuestion);
     },
     methods: {
       completeHunt() {
@@ -83,15 +83,13 @@
       goToPoI(index) {
         //when we will check the location to see if you are allowed to view the route we need to use this.
         this.setCurrentLocation();
-//        setTimeout(() => this.$store.commit('visitPoI', idx),3000);
-//        setTimeout(() => console.log(this.PointsOfInterest[idx]),3000);
 
         this.$store.commit('selectPoIHunt', index);
 
-        if(this.$store.state.treasurehunts.selectedPoI.position.lat === this.$store.state.treasurehunts.selectedPoI.position.lat){
-//        if (this.currentLocation.lat === this.$store.state.treasurehunts.selectedPoI.position.lat &&
-//          this.currentLocation.lng === this.$store.state.treasurehunts.selectedPoI.position.lng
-//        ) {
+        this.IsAtPoI();
+        console.log(this.finishable);
+//        if(this.$store.state.treasurehunts.selectedPoI.position.lat === this.$store.state.treasurehunts.selectedPoI.position.lat){
+        if (this.finishable) {
           this.$store.commit('visitPoIHunt', index);
           this.$router.push({name: 'huntPoI'})
         }
@@ -109,7 +107,6 @@
       },
 
       checkLocationSharing: function (position) {
-        console.log(position);
         if (position.code === 2) {
           console.log(position.message);
         }
@@ -117,7 +114,13 @@
           alert("plz turn on you location sharing under instellingen->safety and protection-> location.");
           console.log("plz turn on you location sharing under instellingen->safety and protection-> location.");
         } else {
-          this.distance_from(position);
+
+          this.currentLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          console.log(this.currentLocation);
+//          this.distance_from(position);
         }
       },
 
@@ -140,18 +143,32 @@
       },
 
       setCurrentLocation: function () {
-        navigator.geolocation.getCurrentPosition((position, options = this.geoLocationOptions) => {
-
-          this.currentLocation = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-        });
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(this.checkLocationSharing, this.checkLocationSharing, this.geoLocationOptions);
+        } else {
+          console.log("Geolocation is not supported by this browser.");
+        }
       },
+
+      IsAtPoI: function () {
+        const errorRange = 0.0002; //22m from the PoI's location
+
+        console.log(this.$store.state.treasurehunts.selectedPoI.position);
+        if ((this.$store.state.treasurehunts.selectedPoI.position.lat + errorRange ) >= this.currentLocation.lat &&
+          (this.$store.state.treasurehunts.selectedPoI.position.lat - errorRange ) <= this.currentLocation.lat &&
+          (this.$store.state.treasurehunts.selectedPoI.position.lng + errorRange ) >= this.currentLocation.lng &&
+          (this.$store.state.treasurehunts.selectedPoI.position.lng - errorRange ) <= this.currentLocation.lng) {
+          this.finishable = true;
+          console.log("You finished the run");
+        }
+        else {
+          this.finishable = false;
+          console.log("ur not there");
+        }
+      }
     },
     computed: {
       PointsOfInterest() {
-//        console.log(this.$store.state.treasurehunts.selectedPoI);
         return this.$store.state.treasurehunts.selectedHuntData;
       }
     }

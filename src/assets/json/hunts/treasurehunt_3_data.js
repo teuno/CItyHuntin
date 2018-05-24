@@ -23,7 +23,7 @@ const data = [
     name: "ARTez",
     description: "ArtEZ Conservatorium, this school was created by a merger of several art academies, conservatories and theater academies. The name ArtEZ is a partial acronym in which the letters A, E and Z each represent the initial letter of the locations where they have a building - Arnhem, Enschede and Zwolle. Since 2003, the Academy of Art & Design has been housed in the renovated Sophia building, a former hospital in Zwolle. ",
     date_build: "",
-    image_url: "static/images/PoIs/artez-conservatorium.jpg",
+    image_url: "static/images/PoIs/artez.jpg",
     position: {lat: 52.514188, lng: 6.095579},
     challengeTitle: 'Question',
     challengeQuestion: 'You are near Zwolle Conservatorium, so now is the moment to find out a local song.  ',

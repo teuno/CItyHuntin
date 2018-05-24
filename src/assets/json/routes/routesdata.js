@@ -36,6 +36,12 @@ const data = [
     name: 'Hidden places',
     description: 'Zwolle has alot almost hidden and unknown points of interest. Want to find out which?',
     jsonfile: routeBasePath+'hidden_zwolledata'
+  },
+  {
+    image: "static/img/windesheim.jpg",
+    name: 'Campus route',
+    description: 'Special for the Winnovation we created a Campusroute you can walk and enjoy our app',
+    jsonfile: routeBasePath+'campus_routedata'
   }
 ];
 
