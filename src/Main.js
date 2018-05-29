@@ -4,9 +4,9 @@ import VueCordova from 'vue-cordova'
 
 // Regular Webpack:
 import * as VueGoogleMaps from 'vue2-google-maps'
-import {routes }from './routes'
+import {routes }from './Routes'
 import PageTitle from './components/PageTitle.vue'
-import store from './Stores/store';
+import store from './stores/Store';
 Vue.component('page-title', PageTitle);
 
 

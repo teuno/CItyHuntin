@@ -2,6 +2,12 @@ const routeBasePath = '../assets/json/routes/';
 
 const data = [
   {
+    image: "static/img/windesheim.jpg",
+    name: 'Campus route',
+    description: 'Special for the Winnovation we created a Campusroute you can walk and enjoy our app',
+    jsonfile: routeBasePath+'campus_routedata'
+  },
+  {
     image: "static/img/route_1_religious.jpeg",
     name: 'Religious buildings',
     description: 'Time for some peace? There are very beautifull churches to visit. This route is about 2.2km long',
@@ -37,12 +43,6 @@ const data = [
     description: 'Zwolle has alot almost hidden and unknown points of interest. Want to find out which?',
     jsonfile: routeBasePath+'hidden_zwolledata'
   },
-  {
-    image: "static/img/windesheim.jpg",
-    name: 'Campus route',
-    description: 'Special for the Winnovation we created a Campusroute you can walk and enjoy our app',
-    jsonfile: routeBasePath+'campus_routedata'
-  }
 ];
 
 export default data;
