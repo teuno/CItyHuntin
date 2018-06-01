@@ -32,7 +32,7 @@ const data = [
     description: 'On the location of the shelter church "Onder de Boge". Between 1892 and 1926 the meetingroom of the R. C. Workmen\'s association. Till 1987 it was used as a warehouse.Since then it helds room to 27 appartments',
     date_build: "1848",
     image_url: "static/img/PoIs/joseph.jpg",
-    position: {lat: 52.511047, lng: 6.091728}
+    position: {lat: 52.513106, lng: 6.092700}
   },
   {
     name: "Christian Coffehouse De Fuik",

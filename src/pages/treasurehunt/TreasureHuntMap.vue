@@ -86,13 +86,12 @@
 
         this.$store.commit('selectPoIHunt', index);
 
-        this.IsAtPoI();
-        console.log(this.finishable);
-//        if(this.$store.state.treasurehunts.selectedPoI.position.lat === this.$store.state.treasurehunts.selectedPoI.position.lat){
-        if (this.finishable) {
+        //uncomment to get the location check back
+//        this.IsAtPoI();
+//        if (this.finishable) {
           this.$store.commit('visitPoIHunt', index);
           this.$router.push({name: 'huntPoI'})
-        }
+//        }
       },
 
       //geolocation methods
