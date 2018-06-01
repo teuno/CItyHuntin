@@ -5,7 +5,7 @@
     <div class="my-content">
       <div>
         <p class="is-size-5 has-text-weight-bold">Name of the hunt</p>
-        <p class="is-size-7 has-text-weight-light">{{name}}</p>
+        <p class="is-size-7 has-text-weight-light">{{route.name}}</p>
       </div>
 
       <div>
@@ -82,6 +82,9 @@
         const hours = Math.floor(this.time / 60);
         const minutes = this.time % 60;
         return hours + ' hours and ' + minutes + ' minutes';
+      },
+      route: function(){
+        return this.$store.state.treasurehunts.selectedHunt;
       }
     }
   }

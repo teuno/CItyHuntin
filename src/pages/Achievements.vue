@@ -50,10 +50,14 @@
   @import "../assets/sass/main.scss";
 
   .achievements {
+    min-width: 100vw;
+    width: 100vw;
+    min-height: 100vh;
     background-color: $blue;
 
+
     .is-achievement {
-      margin: 0.5em;
+      margin-bottom: 0.5em;
     }
 
     h1 {
@@ -68,5 +72,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
   }
 </style>

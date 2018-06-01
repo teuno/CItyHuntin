@@ -6,7 +6,7 @@
     <div class="my-content">
       <div>
         <p class="is-size-5 has-text-weight-bold">Name of the route</p>
-        <p class="is-size-7 has-text-weight-light">{{name}}</p>
+        <p class="is-size-7 has-text-weight-light">{{route.name}}</p>
       </div>
 
       <div>
@@ -53,7 +53,7 @@
     data() {
       return {
         title: 'Summary of the route',
-        name: 'Culture & Architecture',
+//        name: 'Culture & Architecture',
         distance: 250,//meters
         time: 208, //minutes
         rating: 1 //how many stars colored
@@ -76,6 +76,9 @@
         const hours = Math.floor(this.time / 60);
         const minutes = this.time % 60;
         return hours + ' hours and ' + minutes + ' minutes';
+      },
+      route: function(){
+        return this.$store.state.routes.selectedRoute;
       }
     }
   }

@@ -18,6 +18,7 @@ const TreasureHuntsStore = {
     selectedPoI: {},
     selectedHuntIndex: 0,
     answeredQuestion: false,
+    errormessagecode3hasbeenshow: false,
   },
   mutations: {
     selectHunt(state, index) {
@@ -40,6 +41,9 @@ const TreasureHuntsStore = {
     },
     completePoIHunt(state){
       state.answeredQuestion = true;
+    },
+    setErrorMessagCode3HasBeenShown(state){
+      state.errormessagecode3hasbeenshow = true;
     },
   },
   actions: {},

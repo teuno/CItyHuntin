@@ -2,6 +2,7 @@
   <div>
     <gmap-map
       ref="gmap"
+      :options="mapOptions"
       :center="center"
       :zoom="12"
       style="width:100%;  height: 100vh;"
@@ -36,6 +37,9 @@
         center: {lat: 45.508, lng: -73.587},
         //the map
         map: null,
+        mapOptions: {
+          disableDefaultUI: true,
+        },
       }
     },
     mounted() {

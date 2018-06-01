@@ -1,20 +1,16 @@
 <template>
   <div>
-    <!--<button @click="getLocation">click</button>-->
-    <!--<label>{{text}}</label>-->
-    <!--<button v-if="routeFinishable" @click="completeRoute">Complete the route</button>-->
-
 
     <h1 v-if="this.$store.state.treasurehunts.answeredQuestion">
       {{$store.state.treasurehunts.selectedPoI.challengeCompleteHint}}</h1>
 
     <gmap-map
       ref="gmap"
+      :options="mapOptions"
       :center="center"
       :zoom="12"
       style="width:100%;  height: 100vh;"
     >
-
 
       <gmap-marker
         :key="index"
@@ -42,13 +38,14 @@
     components: {},
     data: function () {
       return {
-        activeMarker: '',
-        text: "",
 
         //needed for something, cuz else errors
         center: {lat: 45.508, lng: -73.587},
         //the map
         map: null,
+        mapOptions: {
+          disableDefaultUI: true,
+        },
 
         routeFinishable: false,
 
@@ -89,8 +86,8 @@
         //uncomment to get the location check back
 //        this.IsAtPoI();
 //        if (this.finishable) {
-          this.$store.commit('visitPoIHunt', index);
-          this.$router.push({name: 'huntPoI'})
+        this.$store.commit('visitPoIHunt', index);
+        this.$router.push({name: 'huntPoI'})
 //        }
       },
 
@@ -109,31 +106,14 @@
         if (position.code === 2) {
           console.log(position.message);
         }
-        else if (position.code === 3) {
+        else if (position.code === 3 && this.$store.state.treasurehunts.errormessagecode3hasbeenshow === false) {
           alert("plz turn on you location sharing under instellingen->safety and protection-> location.");
-          console.log("plz turn on you location sharing under instellingen->safety and protection-> location.");
+          this.$store.commit('setErrorMessagCode3HasBeenShown');
         } else {
-
           this.currentLocation = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           };
-          console.log(this.currentLocation);
-//          this.distance_from(position);
-        }
-      },
-
-      distance_from: function (position) {
-        console.log(position);
-        const errorRange = 0.1;
-        this.text = 'hoi';
-
-        if ((position.coords.latitude + errorRange ) >= this.currentLocation.lat &&
-          (position.coords.latitude - errorRange ) <= this.currentLocation.lat &&
-          (position.coords.longitude + errorRange ) >= this.currentLocation.lng &&
-          (position.coords.longitude - errorRange ) <= this.currentLocation.lng) {
-          console.log("You finished the run");
-          this.finishable = true;
         }
       },
 

@@ -16,11 +16,11 @@
 
 
     <div class="controls">
-      <a @click="left" class="button">
+      <a @click="left" class="button is-rounded">
         <i class="fa fa-caret-left"></i>
       </a>
       <button @click="goToMoreRouteInfo" class="button is-rounded">Choose route</button>
-      <a @click="right" class="button">
+      <a @click="right" class="button is-rounded">
         <i class="fa fa-caret-right"></i>
       </a>
     </div>

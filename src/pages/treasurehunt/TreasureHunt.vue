@@ -16,11 +16,11 @@
     </carousel-3d>
 
     <div class="controls">
-      <a @click="left" class="button">
+      <a @click="left" class="button is-rounded">
         <i class="fa fa-caret-left"></i>
       </a>
       <button @click="goToTreasureHuntSummary" class="button is-rounded">Choose treasure hunt</button>
-      <a v-on:click="right" class="button">
+      <a v-on:click="right" class="button is-rounded">
         <i class="fa fa-caret-right"></i>
       </a>
     </div>
