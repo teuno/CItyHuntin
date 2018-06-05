@@ -19,6 +19,14 @@
         @click="goToPoI(index)"
       >
       </gmap-marker>
+
+      <gmap-info-window
+        :position="currentLocation"
+      >
+        <span class="icon flag-icon flag-icon-ro is-medium "></span>
+      </gmap-info-window>
+
+
     </gmap-map>
 
     <section v-if="routeFinishable" class="hero is-small is-column-centered">
@@ -63,6 +71,15 @@
     },
 
     mounted() {
+      this.setCurrentLocation();
+
+      this.$nextTick(function () {
+        window.setInterval(() => {
+          this.setCurrentLocation();
+        },3000);
+      });
+
+
       //set bounds of the map
       this.$refs.gmap.$mapPromise.then((map) => {
         const bounds = new google.maps.LatLngBounds()

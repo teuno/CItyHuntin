@@ -15,6 +15,13 @@
         @click="goToPoI(index)"
       >
       </gmap-marker>
+
+      <gmap-info-window
+        :position="currentLocation"
+      >
+        <span class="icon flag-icon flag-icon-ro is-medium "></span>
+      </gmap-info-window>
+
     </gmap-map>
 
     <section class="hero is-small is-column-centered">
@@ -40,9 +47,20 @@
         mapOptions: {
           disableDefaultUI: true,
         },
+
+        //geolocation
+        currentLocation: {lat: 45.508, lng: -73.587},
       }
     },
     mounted() {
+      this.setCurrentLocation();
+
+      this.$nextTick(function () {
+        window.setInterval(() => {
+          this.setCurrentLocation();
+        },3000);
+      });
+
       //set bounds of the map
       this.$refs.gmap.$mapPromise.then((map) => {
         const bounds = new google.maps.LatLngBounds()
@@ -61,6 +79,32 @@
         this.$store.commit('visitPoIRoute', index);
         this.$router.push({name: 'routePoI'});
       },
+
+      //geolocation methods
+      checkLocationSharing: function (position) {
+        if (position.code === 2) {
+          console.log(position.message);
+        }
+        else if (position.code === 3 && this.$store.state.treasurehunts.errormessagecode3hasbeenshow === false) {
+          alert("plz turn on you location sharing under instellingen->safety and protection-> location.");
+          this.$store.commit('setErrorMessagCode3HasBeenShown');
+        } else {
+          console.log(position.coords);
+          this.currentLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+        }
+      },
+
+
+      setCurrentLocation: function () {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(this.checkLocationSharing, this.checkLocationSharing, this.geoLocationOptions);
+        } else {
+          console.log("Geolocation is not supported by this browser.");
+        }
+      },
     },
     computed: {
       PointsOfInterest() {
@@ -73,4 +117,5 @@
 
 <style lang="scss" scoped>
   @import "../../assets/sass/main";
+
 </style>
