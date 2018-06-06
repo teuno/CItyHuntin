@@ -49,6 +49,12 @@
 <style lang="scss" scoped>
   @import "../assets/sass/main.scss";
 
+  .is-multiline{
+    background-color: $blue;
+    margin: 0;
+    padding: 0;
+  }
+
   .achievements {
     min-width: 100vw;
     width: 100vw;

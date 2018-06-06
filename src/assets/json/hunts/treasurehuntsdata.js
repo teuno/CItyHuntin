@@ -2,22 +2,28 @@ const huntBasePath = '../assets/json/hunts/';
 
 const data = [
   {
-    image: "static/img/hunt_1.jpeg",
+    image: "static/img/stedelijk.jpg",
     name: 'TЯÆSUЯE HUИT 1',
-    description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 2.2km long',
-    jsonfile: huntBasePath+'treasurehunt_1_data'
+    km: 2200,
+    duration: 27,
+    description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 2.2km long.',
+    jsonfile: huntBasePath + 'treasurehunt_1_data'
   },
   {
-    image: "static/img/hunt_2.jpeg",
+    image: "static/img/free-masonary.jpg",
     name: 'Treasure Hunt 2',
-    description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 2.3km long',
-    jsonfile: huntBasePath+'treasurehunt_2_data'
+    km: 2200,
+    duration: 28,
+    description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 2.3km long.',
+    jsonfile: huntBasePath + 'treasurehunt_2_data'
   },
   {
-    image: "static/img/hunt_3.jpeg",
+    image: "static/img/Peperbus.jpg",
     name: 'Treasure Hunt 3',
-    description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 3.3km long',
-    jsonfile: huntBasePath+'treasurehunt_3_data'
+    km: 3300,
+    duration: 40,
+    description: 'Experience Zwolle in a very fun way. If you do it right, this route is about 3.3km long.',
+    jsonfile: huntBasePath + 'treasurehunt_3_data'
   }
 ];
 

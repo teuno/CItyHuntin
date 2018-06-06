@@ -15,7 +15,6 @@
             </div>
 
 
-
             <div class="tile is-child box">
               <p>{{PoI.description}}</p>
             </div>
@@ -46,10 +45,9 @@
     components: {},
     methods: {
       backToRoute() {
-        console.log(this.$store.state.treasurehunts.selectedPoI);
         this.$router.go(-1);
       },
-      toQuestion(){
+      toQuestion() {
         this.$router.push({name: 'huntquestion'})
       }
     },

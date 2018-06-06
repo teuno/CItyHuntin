@@ -19,6 +19,10 @@ const TreasureHuntsStore = {
     selectedHuntIndex: 0,
     answeredQuestion: false,
     errormessagecode3hasbeenshow: false,
+
+
+    // poIIndex: 0,
+    // selectedPoI: {},
   },
   mutations: {
     selectHunt(state, index) {
@@ -26,12 +30,13 @@ const TreasureHuntsStore = {
       state.selectedHunt = state.huntsSummary[index];
     },
     pickHunt(state) {
-      state.answeredQuestion = false;
+      // state.answeredQuestion = true;
       state.selectedHuntData = routesMap[state.selectedHunt.jsonfile];
       state.selectedHuntData.map(x => {
         x.visited = false;
         return x;
       });
+      state.selectedPoI = state.selectedHuntData[0];
     },
     visitPoIHunt(state, index) {
       state.selectedHuntData[index].visited = true;
@@ -39,8 +44,13 @@ const TreasureHuntsStore = {
     selectPoIHunt(state, index) {
       state.selectedPoI = state.selectedHuntData[index];
     },
+    // selectPoIHunt(state) {
+    //   state.poIIndex+=1;
+    //   state.selectedPoI = state.selectedHuntData[state.poIIndex];
+    // },
     completePoIHunt(state){
       state.answeredQuestion = true;
+      // state.poIIndex+=1;
     },
     setErrorMessagCode3HasBeenShown(state){
       state.errormessagecode3hasbeenshow = true;

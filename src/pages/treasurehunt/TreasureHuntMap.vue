@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <h1 v-if="this.$store.state.treasurehunts.answeredQuestion">
       {{$store.state.treasurehunts.selectedPoI.challengeCompleteHint}}</h1>
 
@@ -46,7 +45,6 @@
     components: {},
     data: function () {
       return {
-
         //needed for something, cuz else errors
         center: {lat: 45.508, lng: -73.587},
         //the map
@@ -55,11 +53,11 @@
           disableDefaultUI: true,
         },
 
-        routeFinishable: false,
+        routeFinishable: false, //to check for debuging comment out here and the method AllLocationsAreFinished in mounted
 
 
         //test for geolocation
-        currentLocation: {lat: 0, lng: 0},
+        currentLocation: this.$store.state.treasurehunts.selectedPoI.position,
         finishable: false,
         geoLocationOptions: {
           /*All needed for it to work an a android device*/
@@ -69,7 +67,6 @@
         },
       }
     },
-
     mounted() {
       this.setCurrentLocation();
 
@@ -88,6 +85,7 @@
         }
         map.fitBounds(bounds);
       });
+
       this.AllLocationsAreFinished();
     },
     methods: {
@@ -98,14 +96,15 @@
         //when we will check the location to see if you are allowed to view the route we need to use this.
         this.setCurrentLocation();
 
+//        this.$store.commit('selectPoIHunt');
         this.$store.commit('selectPoIHunt', index);
 
         //uncomment to get the location check back
-//        this.IsAtPoI();
-//        if (this.finishable) {
+        this.IsAtPoI();
+        if (this.finishable) {
         this.$store.commit('visitPoIHunt', index);
         this.$router.push({name: 'huntPoI'})
-//        }
+        }
       },
 
       //geolocation methods

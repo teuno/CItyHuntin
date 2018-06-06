@@ -60,8 +60,8 @@
       return {
         title: 'Summary of the hunt',
         name: 'Culture & Architecture',
-        distance: 250,//meters
-        time: 208, //minutes
+        distance: this.$store.state.treasurehunts.selectedHunt.km,//meters
+        time: this.$store.state.treasurehunts.selectedHunt.duration, //minutes
         rating: 1 //how many stars colored
       }
     },
@@ -81,7 +81,11 @@
       showTimeWalkedInHoursAndMinutes: function () {
         const hours = Math.floor(this.time / 60);
         const minutes = this.time % 60;
-        return hours + ' hours and ' + minutes + ' minutes';
+        if(hours> 0){
+          return hours + ' hours and ' + minutes + ' minutes';
+        }else{
+          return minutes + ' minutes';
+        }
       },
       route: function(){
         return this.$store.state.treasurehunts.selectedHunt;

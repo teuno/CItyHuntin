@@ -54,8 +54,8 @@
       return {
         title: 'Summary of the route',
 //        name: 'Culture & Architecture',
-        distance: 250,//meters
-        time: 208, //minutes
+        distance: this.$store.state.routes.selectedRoute.km,//meters
+        time: this.$store.state.routes.selectedRoute.duration, //minutes
         rating: 1 //how many stars colored
       }
     },
@@ -75,9 +75,14 @@
       showTimeWalkedInHoursAndMinutes: function () {
         const hours = Math.floor(this.time / 60);
         const minutes = this.time % 60;
-        return hours + ' hours and ' + minutes + ' minutes';
+        if(hours> 0){
+          return hours + ' hours and ' + minutes + ' minutes';
+        }else{
+          return minutes + ' minutes';
+        }
       },
       route: function(){
+        console.log(this.$store.state.routes.selectedRoute)
         return this.$store.state.routes.selectedRoute;
       }
     }

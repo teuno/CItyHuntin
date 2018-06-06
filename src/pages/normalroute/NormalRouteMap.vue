@@ -49,7 +49,7 @@
         },
 
         //geolocation
-        currentLocation: {lat: 45.508, lng: -73.587},
+        currentLocation: this.$store.state.routes.selectedPoI.position,
       }
     },
     mounted() {
