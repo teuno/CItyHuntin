@@ -82,7 +82,7 @@
         }
       },
       route: function(){
-        console.log(this.$store.state.routes.selectedRoute)
+        console.log(this.$store.state.routes.selectedRoute);
         return this.$store.state.routes.selectedRoute;
       }
     }

@@ -58,12 +58,12 @@
       this.$nextTick(function () {
         window.setInterval(() => {
           this.setCurrentLocation();
-        },3000);
+        }, 3000);
       });
 
       //set bounds of the map
       this.$refs.gmap.$mapPromise.then((map) => {
-        const bounds = new google.maps.LatLngBounds()
+        const bounds = new google.maps.LatLngBounds();
         for (let m of this.PointsOfInterest) {
           bounds.extend(m.position)
         }
@@ -89,7 +89,6 @@
           alert("plz turn on you location sharing under instellingen->safety and protection-> location.");
           this.$store.commit('setErrorMessagCode3HasBeenShown');
         } else {
-          console.log(position.coords);
           this.currentLocation = {
             lat: position.coords.latitude,
             lng: position.coords.longitude

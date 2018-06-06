@@ -16,7 +16,7 @@ const routesMap = {
   '../assets/json/routes/more_then_the_centerdata': more_then_the_center,
   '../assets/json/routes/lots_of_culturedata': lots_of_culture,
   '../assets/json/routes/campus_routedata': campus
-}
+};
 
 const RoutesStore = {
   state: {
@@ -47,6 +47,6 @@ const RoutesStore = {
   },
   actions: {},
   getters: {}
-}
+};
 
 export default RoutesStore;

@@ -83,7 +83,7 @@
     justify-content: flex-start;
   }
 
-  .is-large{
+  .is-large {
     justify-content: flex-start;
   }
 

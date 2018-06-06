@@ -23,7 +23,6 @@
     methods: {
       goToHuntMapSummary: function () {
         this.$store.commit('pickHunt');
-        console.log(this.$store.state.treasurehunts.selectedHuntData);
         this.$router.push({name: 'treasurehuntmap'})
       }
     },

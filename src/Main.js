@@ -30,7 +30,7 @@ Vue.use(VueGoogleMaps, {
 
 const router = new VueRouter({
   // mode: 'history', this doesnt work on android so now we have ugly urls
-  base: __dirname,
+  // base: __dirname, //if we want a new default directory
   routes
 });
 

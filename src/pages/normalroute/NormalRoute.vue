@@ -3,7 +3,8 @@
 
     <page-title :title="title"></page-title>
 
-    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="windowWidth" :height="windowHeight">
+    <carousel-3d ref="carousel" :controls-visible="false" :clickable="false" :width="windowWidth"
+                 :height="windowHeight">
       <slide v-for="(route, i) in routes" :key="i" :index="i">
         <figure>
           <div class="container" @click="goToMoreRouteInfo">
@@ -59,27 +60,27 @@
     mounted() {
       this.$refs.carousel.currentIndex = this.$store.state.routes.selectedRouteIndex;
       let that = this;
-      this.$nextTick(function() {
-          if(window.innerHeight < 660){
-            that.windowHeight = 320;
-            that.windowWidth = 300;
-          }
-          else if(window.innerHeight < 760){
-            that.windowHeight = 400;
-            that.windowWidth = 330;
-          }
-          else if(window.innerHeight < 860){
-            that.windowHeight = 450;
-            that.windowWidth = 370;
-          }
-          else{
-            that.windowHeight = 550;
-            that.windowWidth = 320;
-          }
+      this.$nextTick(function () {
+        if (window.innerHeight < 660) {
+          that.windowHeight = 320;
+          that.windowWidth = 300;
+        }
+        else if (window.innerHeight < 760) {
+          that.windowHeight = 400;
+          that.windowWidth = 330;
+        }
+        else if (window.innerHeight < 860) {
+          that.windowHeight = 450;
+          that.windowWidth = 370;
+        }
+        else {
+          that.windowHeight = 550;
+          that.windowWidth = 320;
+        }
       });
     },
     computed: {
-      routes () {
+      routes() {
         return this.$store.state.routes.routesSummary;
       }
     }

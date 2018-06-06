@@ -32,11 +32,11 @@
       return {
         title: 'Terms and Conditions',
         termsAndConditions: '',
-       //for plugin
+        //for plugin
         isScrollStop: true
       }
     },
-    mounted(){
+    mounted() {
       this.termsAndConditions = data;
 
     }

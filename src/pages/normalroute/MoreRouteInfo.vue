@@ -1,12 +1,10 @@
 <template>
   <div class="MoreRouteInfo">
 
-
     <div class="container" @click="goToTreasureHuntMapSummary">
       <img :src="route.image" alt="Norway">
       <div class="center">{{route.name}}</div>
     </div>
-
 
     <section class="hero">
       <div class="hero-body">
@@ -15,7 +13,6 @@
         </div>
       </div>
     </section>
-
 
     <button @click="goToTreasureHuntMapSummary" class="button is-rounded">Start route</button>
   </div>
@@ -52,7 +49,7 @@
     background-color: $green;
     color: $text_white;
 
-    .container{
+    .container {
       display: flex;
       flex-direction: column;
       justify-content: space-around;

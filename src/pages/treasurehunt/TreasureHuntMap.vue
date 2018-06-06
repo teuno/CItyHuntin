@@ -79,7 +79,7 @@
 
       //set bounds of the map
       this.$refs.gmap.$mapPromise.then((map) => {
-        const bounds = new google.maps.LatLngBounds()
+        const bounds = new google.maps.LatLngBounds();
         for (let m of this.PointsOfInterest) {
           bounds.extend(m.position)
         }
@@ -96,7 +96,6 @@
         //when we will check the location to see if you are allowed to view the route we need to use this.
         this.setCurrentLocation();
 
-//        this.$store.commit('selectPoIHunt');
         this.$store.commit('selectPoIHunt', index);
 
         //uncomment to get the location check back
@@ -108,15 +107,6 @@
       },
 
       //geolocation methods
-
-      getLocation: function () {
-        console.log("in get Location");
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(this.checkLocationSharing, this.checkLocationSharing, this.geoLocationOptions);
-        } else {
-          console.log("Geolocation is not supported by this browser.");
-        }
-      },
 
       checkLocationSharing: function (position) {
         if (position.code === 2) {
@@ -148,18 +138,10 @@
       IsAtPoI: function () {
         const errorRange = 0.0002; //22m from the PoI's location
 
-        console.log(this.$store.state.treasurehunts.selectedPoI.position);
-        if ((this.$store.state.treasurehunts.selectedPoI.position.lat + errorRange ) >= this.currentLocation.lat &&
+        this.finishable = (this.$store.state.treasurehunts.selectedPoI.position.lat + errorRange ) >= this.currentLocation.lat &&
           (this.$store.state.treasurehunts.selectedPoI.position.lat - errorRange ) <= this.currentLocation.lat &&
           (this.$store.state.treasurehunts.selectedPoI.position.lng + errorRange ) >= this.currentLocation.lng &&
-          (this.$store.state.treasurehunts.selectedPoI.position.lng - errorRange ) <= this.currentLocation.lng) {
-          this.finishable = true;
-          console.log("You finished the run");
-        }
-        else {
-          this.finishable = false;
-          console.log("ur not there");
-        }
+          (this.$store.state.treasurehunts.selectedPoI.position.lng - errorRange ) <= this.currentLocation.lng;
       }
     },
     computed: {

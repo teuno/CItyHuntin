@@ -68,7 +68,7 @@
               </a>
             </p>
             <p @click="cancel" class="control">
-              <a  class="button">
+              <a class="button">
                 Cancel
               </a>
             </p>
@@ -90,7 +90,7 @@
         title: 'Profile'
       }
     },
-    methods:{
+    methods: {
       save: function () {
         console.log("save");
       },
@@ -110,7 +110,7 @@
     width: 100vw;
     background-color: $navy_blue;
 
-    .input{
+    .input {
       width: 90%
     }
   }

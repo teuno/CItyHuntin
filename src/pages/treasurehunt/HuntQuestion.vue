@@ -14,7 +14,6 @@
             </div>
 
 
-
             <div class="tile is-child box">
               <p>{{PoI.challengeQuestion}}</p>
             </div>

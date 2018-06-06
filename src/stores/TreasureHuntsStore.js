@@ -8,7 +8,7 @@ const routesMap = {
   '../assets/json/hunts/treasurehunt_1_data': treasure_hunt1,
   '../assets/json/hunts/treasurehunt_2_data': treasure_hunt2,
   '../assets/json/hunts/treasurehunt_3_data': treasure_hunt3,
-}
+};
 
 const TreasureHuntsStore = {
   state: {
@@ -19,10 +19,6 @@ const TreasureHuntsStore = {
     selectedHuntIndex: 0,
     answeredQuestion: false,
     errormessagecode3hasbeenshow: false,
-
-
-    // poIIndex: 0,
-    // selectedPoI: {},
   },
   mutations: {
     selectHunt(state, index) {
@@ -30,7 +26,6 @@ const TreasureHuntsStore = {
       state.selectedHunt = state.huntsSummary[index];
     },
     pickHunt(state) {
-      // state.answeredQuestion = true;
       state.selectedHuntData = routesMap[state.selectedHunt.jsonfile];
       state.selectedHuntData.map(x => {
         x.visited = false;
@@ -44,13 +39,8 @@ const TreasureHuntsStore = {
     selectPoIHunt(state, index) {
       state.selectedPoI = state.selectedHuntData[index];
     },
-    // selectPoIHunt(state) {
-    //   state.poIIndex+=1;
-    //   state.selectedPoI = state.selectedHuntData[state.poIIndex];
-    // },
     completePoIHunt(state){
       state.answeredQuestion = true;
-      // state.poIIndex+=1;
     },
     setErrorMessagCode3HasBeenShown(state){
       state.errormessagecode3hasbeenshow = true;
@@ -58,6 +48,6 @@ const TreasureHuntsStore = {
   },
   actions: {},
   getters: {}
-}
+};
 
 export default TreasureHuntsStore;
